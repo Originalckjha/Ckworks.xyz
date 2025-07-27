@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandra Kishor Jha – Developer & Educator</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ====================  NAVIGATION  ==================== -->
+    <nav class="nav-container" id="navbar">
+        <div class="brand-icon"><span class="bracket">{</span>CKJ<span class="bracket">}</span></div>
+
+        <ul class="nav-links">
+            <li><a href="#home"     class="nav-link"><span class="link-number">01.</span> Home     </a></li>
+            <li><a href="#about"    class="nav-link"><span class="link-number">02.</span> About    </a></li>
+            <li><a href="#skills"   class="nav-link"><span class="link-number">03.</span> Skills   </a></li>
+            <li><a href="#projects" class="nav-link"><span class="link-number">04.</span> Projects </a></li>
+            <li><a href="#resources"class="nav-link"><span class="link-number">05.</span> Resources</a></li>
+            <li><a href="#contact"  class="nav-link"><span class="link-number">06.</span> Contact  </a></li>
+        </ul>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ----------  Mobile Slide-out Menu ---------- -->
+    <aside class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-menu-content">
+            <a href="#home"     class="mobile-link">01. Home</a>
+            <a href="#about"    class="mobile-link">02. About</a>
+            <a href="#skills"   class="mobile-link">03. Skills</a>
+            <a href="#projects" class="mobile-link">04. Projects</a>
+            <a href="#resources"class="mobile-link">05. Resources</a>
+            <a href="#contact"  class="mobile-link">06. Contact</a>
+        </nav>
+
+        <div class="mobile-social">
+            <a href="https://github.com/Originalckjha"              class="mobile-social-link" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/chandra-kishor-jha-276744184" class="mobile-social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/originalckjha"                   class="mobile-social-link" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://thelearnex.blogspot.com/?m=1"          class="mobile-social-link" target="_blank"><i class="fab fa-blogger-b"></i></a>
+        </div>
+    </aside>
+
+    <!-- ----------  Desktop Sidebars ---------- -->
+    <div class="sidebar-social">
+        <a href="https://github.com/Originalckjha"              class="social-icon" title="GitHub"   target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/chandra-kishor-jha-276744184" class="social-icon" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/originalckjha"                   class="social-icon" title="Twitter"  target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://thelearnex.blogspot.com/?m=1"          class="social-icon" title="Blog"     target="_blank"><i class="fab fa-blogger-b"></i></a>
+        <div class="social-line"></div>
+    </div>
+    <div class="sidebar-email">
+        <a href="mailto:ckjha903@gmail.com" class="email-link">ckjha903@gmail.com</a>
+        <div class="email-line"></div>
+    </div>
+
+    <!-- ====================  HERO  ==================== -->
+    <header id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="hero-intro"><span class="terminal-prompt">~/ckjha$</span> <span class="typing-text"></span></p>
+
+                <h1 class="hero-title">
+                    <span class="title-line">Hi, I’m</span>
+                    <span class="title-name">Chandra Kishor Jha</span>
+                    <span class="title-subtitle">Developer & Educator</span>
+                </h1>
+
+                <p class="hero-description">
+                    Passionate about transforming ideas into digital reality while mentoring
+                    <strong class="highlight">300+ students</strong> over <strong class="highlight">6+ years</strong>.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary"><span>View Work</span><i class="fas fa-arrow-right"></i></a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfN6vvvE600Utgi0w2_d_idpaOrTXy1MQdaWYMi22HzvtCvKg/viewform" target="_blank" class="btn-secondary"><span>Hire Me</span><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- Fun code-editor visual -->
+            <div class="hero-visual">
+                <div class="code-editor">
+                    <div class="editor-header">
+                        <div class="editor-tabs"><div class="tab active"><i class="fab fa-js-square"></i> developer.js</div></div>
+                        <div class="editor-controls"><span class="control close"></span><span class="control minimize"></span><span class="control maximize"></span></div>
+                    </div>
+                    <div class="editor-content">
+                        <div class="line-numbers">
+                            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+                        </div>
+                        <pre class="code-lines">
+<span><span class="keyword">const</span> <span class="variable">developer</span> = &#123;</span>
+<span>&nbsp;&nbsp;<span class="property">name</span>: <span class="string">"Chandra Kishor Jha"</span>,</span>
+<span>&nbsp;&nbsp;<span class="property">role</span>: <span class="string">"Educator & Developer"</span>,</span>
+<span>&nbsp;&nbsp;<span class="property">experience</span>: <span class="number">6</span>,</span>
+<span>&nbsp;&nbsp;<span class="property">students</span>: <span class="number">300</span>+</span>
+<span>&#125;;</span>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ====================  ABOUT  ==================== -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header"><span class="section-number">01.</span><h2 class="section-title">About</h2><div class="section-line"></div></div>
+
+            <div class="about-content">
+                <div>
+                    <p>I’m Chandra — a developer who loves teaching. Over the past <span class="highlight">6 years</span> I’ve helped <span class="highlight">300+</span> learners master coding fundamentals through hands-on projects.</p>
+                    <p>Tech I work with:</p>
+                    <ul class="tech-grid">
+                        <li class="tech-item">JavaScript (ES6+)</li><li class="tech-item">React.js</li>
+                        <li class="tech-item">Node.js</li>     <li class="tech-item">MongoDB</li>
+                        <li class="tech-item">HTML & CSS</li>   <li class="tech-item">Git & GitHub</li>
+                    </ul>
+                </div>
+
+                <!-- fun stats -->
+                <div class="about-stats">
+                    <div class="stat-card"><span class="stat-number" data-count="6">0</span><span class="stat-label">Years Teaching</span></div>
+                    <div class="stat-card"><span class="stat-number" data-count="300">0</span><span class="stat-label">Students Mentored</span></div>
+                    <div class="stat-card"><span class="stat-number" data-count="10">0</span><span class="stat-label">Projects Built</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================  SKILLS  ==================== -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header"><span class="section-number">02.</span><h2 class="section-title">Skills</h2><div class="section-line"></div></div>
+
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3 class="category-title"><i class="fas fa-code"></i> Development</h3>
+                    <div class="skill-item"><span class="skill-name">JavaScript</span><div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">React.js</span>   <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">Node.js</span>    <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">CSS/SASS</span>  <div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div></div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title"><i class="fas fa-chalkboard-teacher"></i> Teaching</h3>
+                    <div class="skill-item"><span class="skill-name">Online Teaching</span><div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">Curriculum Design</span><div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">Mentoring</span>      <div class="skill-bar"><div class="skill-progress" data-width="92%"></div></div></div>
+                    <div class="skill-item"><span class="skill-name">Content Creation</span><div class="skill-bar"><div class="skill-progress" data-width="87%"></div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================  PROJECTS  ==================== -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header"><span class="section-number">03.</span><h2 class="section-title">Projects</h2><div class="section-line"></div></div>
+
+            <div class="projects-grid">
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://weaktostrong-git-main-chandra-kishor-jha-s-projects.vercel.app" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/Originalckjha" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-featured">Featured Project</p>
+                        <h3 class="project-title">WeakToStrong Platform</h3>
+                        <p class="project-description">Interactive learning modules that turn weak concepts into strong understanding.</p>
+                        <div class="project-tech"><span>React</span><span>Vercel</span><span>CSS</span></div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">The Learnex Blog</h3>
+                        <p class="project-description">Tutorials and coding tips for aspiring developers.</p>
+                        <div class="project-tech"><span>Blogger</span><span>SEO</span></div>
+                        <div class="project-links"><a href="https://thelearnex.blogspot.com/?m=1" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a></div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Personal Link Hub</h3>
+                        <p class="project-description">All my resources and social links in one place.</p>
+                        <div class="project-tech"><span>Linktree</span><span>Branding</span></div>
+                        <div class="project-links"><a href="https://linktr.ee/Ckjhaa?subscribe" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================  RESOURCES  ==================== -->
+    <section id="resources">
+        <div class="container">
+            <div class="section-header"><span class="section-number">04.</span><h2 class="section-title">Resources</h2><div class="section-line"></div></div>
+
+            <div class="resources-grid">
+                <a href="https://docs.google.com/document/d/1cuhmuK3Mf4hjs4V6wnAF7zL-Id-19SuaqhaI0O9OYcY/edit" target="_blank" class="resource-item">
+                    <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Resume</h3><p>Download my detailed CV</p><span class="resource-arrow">→</span>
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfN6vvvE600Utgi0w2_d_idpaOrTXy1MQdaWYMi22HzvtCvKg/viewform" target="_blank" class="resource-item">
+                    <div class="resource-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Hire Me</h3><p>Let’s work together</p><span class="resource-arrow">→</span>
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYDhe9BZB__bMvXxHY_EI6MCdnS63lhtoVHhttZjUfPgAR1Q/viewform" target="_blank" class="resource-item">
+                    <div class="resource-icon"><i class="fas fa-star"></i></div>
+                    <h3>Rate Website</h3><p>Your feedback matters</p><span class="resource-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================  CONTACT  ==================== -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header"><span class="section-number">05.</span><h2 class="section-title">Contact</h2><div class="section-line"></div></div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let’s connect & collaborate</h3>
+                    <p>Have an idea or need guidance? Drop a line.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item"><i class="fas fa-envelope"></i> ckjha903@gmail.com</div>
+                        <div class="contact-item"><i class="fas fa-link"></i> linktr.ee/Ckjhaa</div>
+                    </div>
+
+                    <div class="contact-social">
+                        <h4>Find me online</h4>
+                        <div class="social-links-grid">
+                            <a href="https://github.com/Originalckjha"   target="_blank" class="social-link-item"><i class="fab fa-github"></i>GitHub</a>
+                            <a href="https://www.linkedin.com/in/chandra-kishor-jha-276744184" target="_blank" class="social-link-item"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                            <a href="https://x.com/originalckjha"        target="_blank" class="social-link-item"><i class="fab fa-x-twitter"></i>Twitter</a>
+                            <a href="https://thelearnex.blogspot.com/?m=1" target="_blank" class="social-link-item"><i class="fab fa-blogger-b"></i>Blog</a>
+                            <a href="https://linktr.ee/Ckjhaa?subscribe" target="_blank" class="social-link-item"><i class="fas fa-link"></i>Linktree</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================  FOOTER  ==================== -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2025 Chandra Kishor Jha • Built with passion.</p>
+            <div class="footer-social">
+                <a href="https://github.com/Originalckjha"              target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/chandra-kishor-jha-276744184" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/originalckjha"                   target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://thelearnex.blogspot.com/?m=1"          target="_blank"><i class="fab fa-blogger-b"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Site JS -->
+    <script src="script.js" defer></script>
+</body>
+</html>
