@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTyping();
 });
 
-/* ---------- Navigation ---------- */
+
 function initNavigation() {
     const toggle  = document.getElementById('nav-toggle');
     const menu    = document.getElementById('mobile-menu');
