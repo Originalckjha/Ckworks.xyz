@@ -1,57 +1,157 @@
-import React, { useState, useEffect, useRef } from ‘react’;
-import { ArrowRight, Github, Linkedin, Mail, Twitter, FileText, ExternalLink, MessageSquare, Star } from ‘lucide-react’;
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandra Kishor Jha | System Architect</title>
+    <meta name="description" content="Personal portfolio of Chandra Kishor Jha. Systems thinking, architectural integrity, and technical leadership.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        akasha: '#080808', // Void Charcoal
+                        vayu: '#8E8E93',   // Ash Grey
+                        agni: '#B85C38',   // Copper Ember
+                        jala: '#12141D',   // Ink Blue
+                        prithvi: '#F2F2F7' // Bone White
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Newsreader', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
-const DigitalUpanishad = () => {
-const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-const [activeSection, setActiveSection] = useState(‘bindu’);
-const binduRef = useRef(null);
+    <style>
+        body { background-color: #080808; color: #F2F2F7; }
+        .kerning-tight { letter-spacing: -0.04em; }
+        .mandala-grid {
+            background-image: radial-gradient(#12141D 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .fade-in { animation: fadeIn 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="mandala-grid font-sans antialiased">
 
-useEffect(() => {
-const handleMouseMove = (e) => {
-if (binduRef.current) {
-const rect = binduRef.current.getBoundingClientRect();
-const centerX = rect.left + rect.width / 2;
-const centerY = rect.top + rect.height / 2;
-setMousePos({
-x: (e.clientX - centerX) / 30,
-y: (e.clientY - centerY) / 30
-});
-}
-};
-window.addEventListener(‘mousemove’, handleMouseMove);
-return () => window.removeEventListener(‘mousemove’, handleMouseMove);
-}, []);
+    <nav class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-6 flex justify-between items-center">
+        <span class="font-bold tracking-tighter text-xl">CKJ.</span>
+        <div class="space-x-8 text-xs uppercase tracking-[0.2em] text-vayu font-medium">
+            <a href="#about" class="hover:text-agni transition-colors">Philosophy</a>
+            <a href="#work" class="hover:text-agni transition-colors">Karma</a>
+            <a href="#contact" class="hover:text-agni transition-colors">Contact</a>
+        </div>
+    </nav>
 
-const scrollToSection = (id) => {
-setActiveSection(id);
-document.getElementById(id)?.scrollIntoView({ behavior: ‘smooth’ });
-};
+    <main class="relative min-h-screen flex flex-col justify-center px-8 md:px-24">
+        <div class="fade-in space-y-4">
+            <span class="text-agni font-mono text-sm tracking-widest uppercase">System Architect</span>
+            <h1 class="text-6xl md:text-9xl font-light kerning-tight leading-none">
+                Chandra <br> <span class="font-bold text-vayu">Kishor Jha</span>
+            </h1>
+            <p class="max-w-xl text-xl md:text-2xl font-serif italic text-vayu leading-relaxed pt-6">
+                "Translating high-level complexity into structural logic. Building tools that respect human intent."
+            </p>
+        </div>
+        
+        <div class="absolute bottom-12 left-8 md:left-24 animate-bounce">
+            <div class="w-[1px] h-12 bg-agni"></div>
+        </div>
+    </main>
 
-const projects = [
-{
-title: “WeakToStrong”,
-description: “A transformative learning platform that embodies the journey from beginner to mastery.”,
-entropy: “Students struggled with fragmented learning resources, unclear progression paths, and lack of personalized guidance.”,
-intervention: “Built an integrated platform combining structured curriculum, real-time mentorship, and adaptive learning paths.”,
-equilibrium: “300+ students gained clarity in their learning journey. Reduced confusion by focusing on fundamentals first.”,
-link: “https://weaktostrong-git-main-chandra-kishor-jha-s-projects.vercel.app”
-},
-{
-title: “The LearnEx”,
-description: “A knowledge repository sharing insights on technology, teaching, and continuous learning.”,
-entropy: “Valuable teaching insights were ephemeral, shared once and forgotten in chat logs.”,
-intervention: “Created a systematic blog to document patterns, anti-patterns, and teaching methodologies.”,
-equilibrium: “Built a searchable knowledge base that serves as extended memory for students.”,
-link: “https://thelearnex.blogspot.com/?m=1”
-},
-{
-title: “10+ Client Projects”,
-description: “Custom solutions ranging from web applications to consulting on system architecture.”,
-entropy: “Each client arrived with unique challenges: performance bottlenecks, technical debt, unclear requirements.”,
-intervention: “Applied first-principles thinking to decompose problems. Delivered minimal viable solutions that scale.”,
-equilibrium: “Projects shipped on time. Clients gained clarity on their own systems. Code that respects future maintainers.”,
-link: null
-}
-];
+    <section id="about" class="py-32 px-8 md:px-24 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div class="space-y-8">
+            <h2 class="text-xs uppercase tracking-[0.4em] text-agni font-bold">The Doctrine</h2>
+            <p class="text-3xl font-light leading-snug">
+                Engineering is a form of <span class="font-serif italic text-vayu">Sadhana</span>—a disciplined pursuit of clarity.
+            </p>
+        </div>
+        <div class="text-vayu space-y-6 text-lg leading-relaxed">
+            <p>
+                With over six years of technical immersion, I view software not as a collection of features, but as a living system. My approach is rooted in <strong>First Principles</strong>: deconstructing problems to their absolute zero (Shunya) before architecting a solution.
+            </p>
+            <p>
+                I specialize in reducing entropy. Whether I am deploying a high-performance web ecosystem or consulting on system design, I ensure every pixel and every line of code justifies its existence.
+            </p>
+        </div>
+    </section>
 
-return (
+    <section id="work" class="py-32 px-8 md:px-24 bg-jala/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16">
+                <h2 class="text-xs uppercase tracking-[0.4em] text-agni font-bold">Selected Karma</h2>
+                <a href="https://github.com/Originalckjha" class="text-vayu hover:text-prithvi text-sm border-b border-vayu">View Github Repository</a>
+            </div>
+
+            <div class="group relative py-12 border-t border-vayu/20 grid md:grid-cols-3 gap-8 items-center hover:bg-jala/50 transition-all px-4">
+                <div class="text-xs font-mono text-vayu">01. Web Platform</div>
+                <div>
+                    <h3 class="text-3xl font-bold mb-2">WeakToStrong</h3>
+                    <p class="text-vayu">A technical growth engine designed to visualize and accelerate skill acquisition.</p>
+                </div>
+                <div class="md:text-right">
+                    <a href="https://weaktostrong-git-main-chandra-kishor-jha-s-projects.vercel.app" class="inline-block py-2 px-6 border border-agni text-agni text-xs uppercase tracking-widest hover:bg-agni hover:text-prithvi transition-all">Explore Execution</a>
+                </div>
+            </div>
+
+            <div class="group relative py-12 border-t border-b border-vayu/20 grid md:grid-cols-3 gap-8 items-center hover:bg-jala/50 transition-all px-4">
+                <div class="text-xs font-mono text-vayu">02. Systems Design</div>
+                <div>
+                    <h3 class="text-3xl font-bold mb-2">10+ Technical Interventions</h3>
+                    <p class="text-vayu">Diverse portfolio of bespoke solutions focused on performance and structural integrity.</p>
+                </div>
+                <div class="md:text-right text-vayu text-sm">
+                    Refined 2018—2024
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-8 md:px-24 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="space-y-4">
+                <span class="text-agni font-serif italic text-xl">Dharma.</span>
+                <h4 class="text-lg font-bold">Purpose Over Hype</h4>
+                <p class="text-vayu text-sm">Technology must serve a human need. If it is only flashy, it is failure.</p>
+            </div>
+            <div class="space-y-4">
+                <span class="text-agni font-serif italic text-xl">Tapasya.</span>
+                <h4 class="text-lg font-bold">Deep Refinement</h4>
+                <p class="text-vayu text-sm">The best systems are forged through hours of uninterrupted, obsessive focus.</p>
+            </div>
+            <div class="space-y-4">
+                <span class="text-agni font-serif italic text-xl">Satya.</span>
+                <h4 class="text-lg font-bold">Absolute Transparency</h4>
+                <p class="text-vayu text-sm">Code should be honest. No black boxes, no unnecessary complexity.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-32 px-8 md:px-24 bg-akasha text-center border-t border-jala">
+        <h2 class="text-xs uppercase tracking-[0.5em] text-vayu mb-8">Ready to Build?</h2>
+        <a href="mailto:ckjha903@gmail.com" class="text-4xl md:text-6xl font-light hover:text-agni transition-colors duration-500 underline underline-offset-8 decoration-1">
+            ckjha903@gmail.com
+        </a>
+        
+        <div class="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-xs uppercase tracking-widest font-bold">
+            <a href="https://www.linkedin.com/in/chandra-kishor-jha-276744184" class="hover:text-agni">LinkedIn</a>
+            <a href="https://x.com/originalckjha" class="hover:text-agni">Twitter</a>
+            <a href="https://github.com/Originalckjha" class="hover:text-agni">GitHub</a>
+            <a href="https://linktr.ee/Ckjhaa" class="hover:text-agni">Network</a>
+        </div>
+
+        <div class="mt-32 text-[10px] text-vayu/30 uppercase tracking-[0.3em]">
+            &copy; 2024 Chandra Kishor Jha &mdash; Built with Restraint.
+        </div>
+    </footer>
+
+</body>
+</html>
