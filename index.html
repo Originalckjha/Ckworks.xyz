@@ -1,883 +1,436 @@
-<!DOCTYPE html>
+import React, { useState, useEffect, useRef } from ‘react’;
+import { ArrowRight, Github, Linkedin, Mail, Twitter, FileText, ExternalLink, MessageSquare, Star } from ‘lucide-react’;
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chandra Kishor Jha - Web Developer & Educator">
-    <title>Chandra Kishor Jha | Developer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+const DigitalUpanishad = () => {
+const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+const [activeSection, setActiveSection] = useState(‘bindu’);
+const binduRef = useRef(null);
+
+useEffect(() => {
+const handleMouseMove = (e) => {
+if (binduRef.current) {
+const rect = binduRef.current.getBoundingClientRect();
+const centerX = rect.left + rect.width / 2;
+const centerY = rect.top + rect.height / 2;
+setMousePos({
+x: (e.clientX - centerX) / 30,
+y: (e.clientY - centerY) / 30
+});
+}
+};
+window.addEventListener(‘mousemove’, handleMouseMove);
+return () => window.removeEventListener(‘mousemove’, handleMouseMove);
+}, []);
+
+const scrollToSection = (id) => {
+setActiveSection(id);
+document.getElementById(id)?.scrollIntoView({ behavior: ‘smooth’ });
+};
+
+const projects = [
+{
+title: “WeakToStrong”,
+description: “A transformative learning platform that embodies the journey from beginner to mastery.”,
+entropy: “Students struggled with fragmented learning resources, unclear progression paths, and lack of personalized guidance.”,
+intervention: “Built an integrated platform combining structured curriculum, real-time mentorship, and adaptive learning paths.”,
+equilibrium: “300+ students gained clarity in their learning journey. Reduced confusion by focusing on fundamentals first.”,
+link: “https://weaktostrong-git-main-chandra-kishor-jha-s-projects.vercel.app”
+},
+{
+title: “The LearnEx”,
+description: “A knowledge repository sharing insights on technology, teaching, and continuous learning.”,
+entropy: “Valuable teaching insights were ephemeral, shared once and forgotten in chat logs.”,
+intervention: “Created a systematic blog to document patterns, anti-patterns, and teaching methodologies.”,
+equilibrium: “Built a searchable knowledge base that serves as extended memory for students.”,
+link: “https://thelearnex.blogspot.com/?m=1”
+},
+{
+title: “10+ Client Projects”,
+description: “Custom solutions ranging from web applications to consulting on system architecture.”,
+entropy: “Each client arrived with unique challenges: performance bottlenecks, technical debt, unclear requirements.”,
+intervention: “Applied first-principles thinking to decompose problems. Delivered minimal viable solutions that scale.”,
+equilibrium: “Projects shipped on time. Clients gained clarity on their own systems. Code that respects future maintainers.”,
+link: null
+}
+];
+
+return (
+<div className="min-h-screen bg-[#0A0A0B] text-[#F4F4F1] font-sans overflow-x-hidden">
+{/* Mandala Grid Overlay */}
+<div className="fixed inset-0 pointer-events-none opacity-5">
+<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[38.2%] h-[38.2%] border border-[#2D2926] rounded-full" />
+<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[61.8%] h-[61.8%] border border-[#2D2926] rounded-full" />
+<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full border border-[#2D2926] rounded-full" />
+</div>
 
 ```
-    body {
-        font-family: 'Arial', sans-serif;
-        background: #000;
-        color: #fff;
-        overflow-x: hidden;
-    }
-
-    /* Navigation */
-    nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.95);
-        padding: 1.5rem 5%;
-        z-index: 1000;
-        border-bottom: 2px solid #FFD700;
-    }
-
-    .nav-content {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #FFD700;
-        letter-spacing: 2px;
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 2.5rem;
-        list-style: none;
-    }
-
-    .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.1rem;
-        transition: all 0.3s;
-        position: relative;
-    }
-
-    .nav-links a:hover {
-        color: #FFD700;
-    }
-
-    .nav-links a::before {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: #FFD700;
-        transition: width 0.3s;
-    }
-
-    .nav-links a:hover::before {
-        width: 100%;
-    }
-
-    .burger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-    }
-
-    .burger div {
-        width: 25px;
-        height: 3px;
-        background: #FFD700;
-        margin: 4px;
-        transition: 0.3s;
-    }
-
-    /* Hero */
-    .hero {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        position: relative;
-        background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-    }
-
-    .hero::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: 
-            repeating-linear-gradient(0deg, transparent, transparent 2px, #FFD700 2px, #FFD700 3px),
-            repeating-linear-gradient(90deg, transparent, transparent 2px, #FFD700 2px, #FFD700 3px);
-        background-size: 100px 100px;
-        opacity: 0.03;
-        animation: grid 20s linear infinite;
-    }
-
-    @keyframes grid {
-        0% { transform: translate(0, 0); }
-        100% { transform: translate(100px, 100px); }
-    }
-
-    .hero-content {
-        z-index: 1;
-        padding: 2rem;
-    }
-
-    .hero h1 {
-        font-size: 4.5rem;
-        margin-bottom: 1rem;
-        animation: slideDown 1s ease;
-    }
-
-    .hero h1 span {
-        color: #FFD700;
-    }
-
-    @keyframes slideDown {
-        from {
-            opacity: 0;
-            transform: translateY(-50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-        color: #FFD700;
-        margin-bottom: 2rem;
-        min-height: 60px;
-        animation: fadeIn 1s ease 0.5s both;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    .cta-btn {
-        display: inline-block;
-        padding: 1rem 3rem;
-        background: #FFD700;
-        color: #000;
-        text-decoration: none;
-        font-size: 1.2rem;
-        font-weight: bold;
-        border-radius: 5px;
-        transition: all 0.3s;
-        animation: fadeIn 1s ease 1s both;
-    }
-
-    .cta-btn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
-    }
-
-    /* Section */
-    section {
-        padding: 5rem 5%;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    .section-title {
-        font-size: 3rem;
-        text-align: center;
-        margin-bottom: 3rem;
-        color: #FFD700;
-        position: relative;
-        animation: fadeInUp 0.8s ease;
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .section-title::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 3px;
-        background: #FFD700;
-    }
-
-    /* About */
-    .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-    }
-
-    .about-text p {
-        font-size: 1.2rem;
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
-        color: #ddd;
-    }
-
-    .stats {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        margin-top: 2rem;
-    }
-
-    .stat-box {
-        background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-        padding: 2rem;
-        border: 2px solid #FFD700;
-        border-radius: 10px;
-        text-align: center;
-        transition: all 0.3s;
-    }
-
-    .stat-box:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-    }
-
-    .stat-number {
-        font-size: 3rem;
-        color: #FFD700;
-        font-weight: bold;
-    }
-
-    .stat-label {
-        font-size: 1.1rem;
-        color: #fff;
-        margin-top: 0.5rem;
-    }
-
-    .resume-btn {
-        display: inline-block;
-        margin-top: 2rem;
-        padding: 1rem 2rem;
-        background: transparent;
-        color: #FFD700;
-        border: 2px solid #FFD700;
-        text-decoration: none;
-        font-size: 1.1rem;
-        font-weight: bold;
-        border-radius: 5px;
-        transition: all 0.3s;
-    }
-
-    .resume-btn:hover {
-        background: #FFD700;
-        color: #000;
-    }
-
-    /* Skills */
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-    }
-
-    .skill-card {
-        background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-        padding: 2.5rem;
-        text-align: center;
-        border: 2px solid #FFD700;
-        border-radius: 10px;
-        transition: all 0.4s;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .skill-card::before {
-        content: '';
-        position: absolute;
-        top: -100%;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 215, 0, 0.1);
-        transition: 0.5s;
-    }
-
-    .skill-card:hover::before {
-        top: 0;
-    }
-
-    .skill-card:hover {
-        transform: translateY(-15px) scale(1.05);
-        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
-        border-color: #fff;
-    }
-
-    .skill-icon {
-        font-size: 3.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .skill-name {
-        font-size: 1.3rem;
-        color: #FFD700;
-        font-weight: bold;
-    }
-
-    /* Projects */
-    #projects {
-        background: #0a0a0a;
-    }
-
-    .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 3rem;
-    }
-
-    .project-card {
-        background: #000;
-        border: 2px solid #FFD700;
-        border-radius: 10px;
-        overflow: hidden;
-        transition: all 0.4s;
-    }
-
-    .project-card:hover {
-        transform: translateY(-15px);
-        box-shadow: 0 20px 50px rgba(255, 215, 0, 0.5);
-    }
-
-    .project-img {
-        height: 250px;
-        background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 5rem;
-        transition: all 0.4s;
-    }
-
-    .project-card:hover .project-img {
-        transform: scale(1.1);
-    }
-
-    .project-info {
-        padding: 2rem;
-    }
-
-    .project-title {
-        font-size: 1.8rem;
-        color: #FFD700;
-        margin-bottom: 1rem;
-    }
-
-    .project-desc {
-        color: #ddd;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-    }
-
-    .project-links {
-        display: flex;
-        gap: 1rem;
-    }
-
-    .project-link {
-        padding: 0.7rem 1.5rem;
-        background: #FFD700;
-        color: #000;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: all 0.3s;
-    }
-
-    .project-link:hover {
-        background: #fff;
-        transform: scale(1.05);
-    }
-
-    /* Experience */
-    .timeline {
-        position: relative;
-        padding: 2rem 0;
-    }
-
-    .timeline::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 4px;
-        height: 100%;
-        background: #FFD700;
-    }
-
-    .timeline-item {
-        margin-bottom: 4rem;
-        position: relative;
-    }
-
-    .timeline-content {
-        background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-        padding: 2rem;
-        border: 2px solid #FFD700;
-        border-radius: 10px;
-        width: 45%;
-        position: relative;
-        transition: all 0.4s;
-    }
-
-    .timeline-item:nth-child(odd) .timeline-content {
-        margin-left: auto;
-    }
-
-    .timeline-content:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-    }
-
-    .timeline-date {
-        color: #FFD700;
-        font-weight: bold;
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-    }
-
-    .timeline-title {
-        font-size: 1.5rem;
-        color: #fff;
-        margin-bottom: 0.5rem;
-    }
-
-    .timeline-desc {
-        color: #ddd;
-        line-height: 1.6;
-    }
-
-    /* Contact */
-    #contact {
-        background: #0a0a0a;
-    }
-
-    .contact-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-    }
-
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        width: 100%;
-        padding: 1rem;
-        background: #000;
-        border: 2px solid #FFD700;
-        border-radius: 5px;
-        color: #fff;
-        font-size: 1rem;
-        transition: all 0.3s;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-        outline: none;
-        border-color: #fff;
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-    }
-
-    .form-group textarea {
-        min-height: 150px;
-        resize: vertical;
-    }
-
-    .submit-btn {
-        padding: 1rem 2rem;
-        background: #FFD700;
-        color: #000;
-        border: none;
-        border-radius: 5px;
-        font-size: 1.2rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
-
-    .submit-btn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
-    }
-
-    .contact-info h3 {
-        color: #FFD700;
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .contact-info p {
-        color: #ddd;
-        line-height: 1.8;
-        margin-bottom: 2rem;
-    }
-
-    .social-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    .social-link {
-        padding: 0.8rem 1.5rem;
-        background: #000;
-        color: #FFD700;
-        text-decoration: none;
-        border: 2px solid #FFD700;
-        border-radius: 5px;
-        transition: all 0.3s;
-    }
-
-    .social-link:hover {
-        background: #FFD700;
-        color: #000;
-        transform: translateY(-3px);
-    }
-
-    .action-btns {
-        display: flex;
-        gap: 1rem;
-        margin-top: 2rem;
-    }
-
-    /* Footer */
-    footer {
-        background: #000;
-        padding: 2rem;
-        text-align: center;
-        border-top: 2px solid #FFD700;
-    }
-
-    footer p {
-        color: #FFD700;
-        font-size: 1.1rem;
-    }
-
-    /* Mobile */
-    @media (max-width: 768px) {
-        .nav-links {
-            position: fixed;
-            right: -100%;
-            top: 70px;
-            flex-direction: column;
-            background: #000;
-            width: 100%;
-            padding: 2rem;
-            transition: 0.3s;
-            border-top: 2px solid #FFD700;
-        }
-
-        .nav-links.active {
-            right: 0;
-        }
-
-        .burger {
-            display: flex;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-        }
-
-        .hero h2 {
-            font-size: 1.5rem;
-        }
-
-        .about-grid,
-        .contact-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .timeline::before {
-            left: 20px;
-        }
-
-        .timeline-content {
-            width: calc(100% - 60px);
-            margin-left: 60px !important;
-        }
-
-        .stats {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
+  {/* Navigation */}
+  <nav className="fixed top-0 w-full z-50 backdrop-blur-sm bg-[#0A0A0B]/80 border-b border-[#2D2926]/30">
+    <div className="max-w-7xl mx-auto px-6 md:px-8 py-4 md:py-6 flex justify-between items-center">
+      <div className="text-xs md:text-sm tracking-wider font-medium">CKJ</div>
+      <div className="flex gap-4 md:gap-8 text-xs md:text-sm tracking-wide">
+        {['bindu', 'vritti', 'karma', 'siddhant'].map(s => (
+          <button
+            key={s}
+            onClick={() => scrollToSection(s)}
+            className={`transition-colors duration-300 hover:text-[#B85C38] ${
+              activeSection === s ? 'text-[#B85C38]' : 'text-[#F4F4F1]/60'
+            }`}
+          >
+            {s === 'bindu' ? 'Home' : s.charAt(0).toUpperCase() + s.slice(1)}
+          </button>
+        ))}
+      </div>
+    </div>
+  </nav>
+
+  {/* The Bindu (Hero) */}
+  <section id="bindu" className="min-h-screen flex items-center justify-center relative pt-20">
+    <div className="text-center max-w-4xl px-6 md:px-8">
+      <div
+        ref={binduRef}
+        className="mb-12 md:mb-16 relative inline-block"
+        style={{
+          transform: `translate(${mousePos.x}px, ${mousePos.y}px)`,
+          transition: 'transform 0.1s ease-out'
+        }}
+      >
+        <div className="w-3 h-3 bg-[#B85C38] rounded-full mx-auto shadow-[0_0_30px_rgba(184,92,56,0.5)]" />
+        <div className="absolute inset-0 w-3 h-3 bg-[#B85C38] rounded-full mx-auto animate-ping opacity-20" />
+      </div>
+      
+      <h1 className="text-3xl md:text-5xl lg:text-7xl font-light tracking-tight mb-6 md:mb-8 leading-tight">
+        Teaching is Dharma.<br/>
+        <span className="text-[#F4F4F1]/60">Building is Karma.</span>
+      </h1>
+      
+      <p className="text-lg md:text-xl lg:text-2xl text-[#F4F4F1]/70 font-light tracking-wide max-w-2xl mx-auto leading-relaxed mb-4">
+        Six years guiding 300+ minds from confusion to clarity. 
+        Code is the medium. Understanding is the outcome.
+      </p>
+
+      <p className="text-base md:text-lg text-[#F4F4F1]/50 font-light mb-12">
+        — Chandra Kishor Jha
+      </p>
+
+      <div className="flex flex-wrap gap-4 justify-center mb-8">
+        <a 
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfN6vvvE600Utgi0w2_d_idpaOrTXy1MQdaWYMi22HzvtCvKg/viewform?usp=header"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-6 md:px-8 py-3 bg-[#B85C38] text-[#F4F4F1] text-sm tracking-wider hover:bg-[#B85C38]/90 transition-colors"
+        >
+          HIRE ME
+        </a>
+        <a 
+          href="https://docs.google.com/document/d/1cuhmuK3Mf4hjs4V6wnAF7zL-Id-19SuaqhaI0O9OYcY/edit?usp=drivesdk"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-6 md:px-8 py-3 border border-[#2D2926] text-[#F4F4F1]/70 text-sm tracking-wider hover:border-[#B85C38] hover:text-[#B85C38] transition-colors"
+        >
+          VIEW RESUME
+        </a>
+      </div>
+
+      <div className="mt-16 inline-flex items-center gap-3 text-sm tracking-widest text-[#F4F4F1]/50 group cursor-pointer" onClick={() => scrollToSection('vritti')}>
+        <span className="group-hover:text-[#B85C38] transition-colors">SCROLL TO BEGIN</span>
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 group-hover:text-[#B85C38] transition-all" />
+      </div>
+    </div>
+  </section>
+
+  {/* The Vritti (Operating System) */}
+  <section id="vritti" className="min-h-screen py-20 md:py-32 px-6 md:px-8">
+    <div className="max-w-5xl mx-auto">
+      <h2 className="text-sm tracking-[0.3em] text-[#B85C38] mb-4 uppercase">The Vritti</h2>
+      <h3 className="text-3xl md:text-4xl lg:text-5xl font-light mb-12 md:mb-20 tracking-tight">Operating System of Mind</h3>
+      
+      <div className="grid md:grid-cols-3 gap-12 md:gap-16">
+        <div className="space-y-6 border-t border-[#2D2926] pt-8">
+          <div className="text-xs tracking-[0.25em] text-[#F4F4F1]/40 uppercase">Inputs</div>
+          <h4 className="text-xl md:text-2xl font-light tracking-tight">What I Consume</h4>
+          <ul className="space-y-4 text-sm md:text-base text-[#F4F4F1]/70 leading-relaxed">
+            <li className="flex items-start gap-3">
+              <span className="text-[#B85C38] mt-1.5 flex-shrink-0">—</span>
+              <span>Student questions as primary research. Each "why" is a door to deeper understanding.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-[#B85C38] mt-1.5 flex-shrink-0">—</span>
+              <span>Technical documentation, academic papers, and the patterns behind frameworks.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-[#B85C38] mt-1.5 flex-shrink-0">—</span>
+              <span>The Gita, Stoic philosophy, and systems thinking. Ancient wisdom meets modern code.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="space-y-6 border-t border-[#2D2926] pt-8">
+          <div className="text-xs tracking-[0.25em] text-[#F4F4F1]/40 uppercase">Processing</div>
+          <h4 className="text-xl md:text-2xl font-light tracking-tight">How I Think</h4>
+          <ul className="space-y-4 text-sm md:text-base text-[#F4F4F1]/70 leading-relaxed">
+            <li className="flex items-start gap-3">
+              <span className="text-[#B85C38] mt-1.5 flex-shrink-0">—</span>
+              <span>First principles over memorization. Understand the "why" before the "how".</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-[#B85C38] mt-1.5 flex-shrink-0">—</span>
+              <span>Teach by building. Show, don't tell. Code reviews as philosophical discourse.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-[#B85C38] mt-1.5 flex-shrink-0">—</span>
+              <span>Reduce complexity. A confused student means unclear teaching.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="space-y-6 border-t border-[#2D2926] pt-8">
+          <div className="text-xs tracking-[0.25em] text-[#F4F4F1]/40 uppercase">Outputs</div>
+          <h4 className="text-xl md:text-2xl font-light tracking-tight">What I Build</h4>
+          <ul className="space-y-4 text-sm md:text-base text-[#F4F4F1]/70 leading-relaxed">
+            <li className="flex items-start gap-3">
+              <span className="text-[#B85C38] mt-1.5 flex-shrink-0">—</span>
+              <span>Students who understand systems, not just syntax. Thinking developers, not code monkeys.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-[#B85C38] mt-1.5 flex-shrink-0">—</span>
+              <span>Projects that serve real needs. No vanity metrics, only user outcomes.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-[#B85C38] mt-1.5 flex-shrink-0">—</span>
+              <span>Open-source contributions and public documentation. Teaching at scale.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* The Karma (Projects) */}
+  <section id="karma" className="min-h-screen py-20 md:py-32 px-6 md:px-8 bg-[#1A1E29]">
+    <div className="max-w-5xl mx-auto">
+      <h2 className="text-sm tracking-[0.3em] text-[#B85C38] mb-4 uppercase">The Karma</h2>
+      <h3 className="text-3xl md:text-4xl lg:text-5xl font-light mb-12 md:mb-20 tracking-tight">The Path of Action</h3>
+      
+      <div className="space-y-16 md:space-y-24">
+        {projects.map((project, idx) => (
+          <div key={idx} className="border-l-2 border-[#2D2926] pl-8 md:pl-12 relative group">
+            <div className="absolute -left-[9px] top-0 w-4 h-4 bg-[#B85C38] rounded-full group-hover:scale-125 transition-transform" />
+            
+            <div className="text-xs tracking-[0.25em] text-[#F4F4F1]/40 mb-4 uppercase">
+              Project 0{idx + 1}
+            </div>
+            
+            <h4 className="text-2xl md:text-3xl font-light mb-3 tracking-tight group-hover:text-[#B85C38] transition-colors">
+              {project.title}
+            </h4>
+            
+            <p className="text-sm md:text-base text-[#F4F4F1]/60 mb-6 md:mb-8 leading-relaxed">
+              {project.description}
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
+              <div>
+                <div className="text-xs tracking-widest text-[#B85C38] mb-3 uppercase">Original Entropy</div>
+                <p className="text-sm md:text-base text-[#F4F4F1]/70 leading-relaxed">
+                  {project.entropy}
+                </p>
+              </div>
+              <div>
+                <div className="text-xs tracking-widest text-[#B85C38] mb-3 uppercase">The Intervention</div>
+                <p className="text-sm md:text-base text-[#F4F4F1]/70 leading-relaxed">
+                  {project.intervention}
+                </p>
+              </div>
+              <div>
+                <div className="text-xs tracking-widest text-[#B85C38] mb-3 uppercase">New Equilibrium</div>
+                <p className="text-sm md:text-base text-[#F4F4F1]/70 leading-relaxed">
+                  {project.equilibrium}
+                </p>
+              </div>
+            </div>
+            
+            {project.link && (
+              <a 
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-[#B85C38] hover:gap-4 transition-all tracking-wide"
+              >
+                <span>View Project</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* The Siddhant (Principles) */}
+  <section id="siddhant" className="min-h-screen py-20 md:py-32 px-6 md:px-8">
+    <div className="max-w-4xl mx-auto">
+      <h2 className="text-sm tracking-[0.3em] text-[#B85C38] mb-4 uppercase">The Siddhant</h2>
+      <h3 className="text-3xl md:text-4xl lg:text-5xl font-light mb-12 md:mb-20 tracking-tight">Non-Negotiable Axioms</h3>
+      
+      <div className="space-y-12 md:space-y-16">
+        <div className="border-t border-[#2D2926] pt-8">
+          <h4 className="text-xl md:text-2xl font-light mb-4 tracking-tight">Teaching as Tapasya</h4>
+          <p className="text-sm md:text-base text-[#F4F4F1]/70 leading-relaxed mb-4">
+            True teaching is not information transfer—it's transformation. Each session demands complete presence, 
+            radical patience, and the willingness to explain the same concept fifteen different ways until clarity arrives. 
+            This is disciplined practice, not transactional work.
+          </p>
+          <p className="text-xs md:text-sm text-[#F4F4F1]/50 italic font-serif">
+            "The purpose of education is not to validate what you know, but to confront what you don't."
+          </p>
+        </div>
+
+        <div className="border-t border-[#2D2926] pt-8">
+          <h4 className="text-xl md:text-2xl font-light mb-4 tracking-tight">Code as Karma</h4>
+          <p className="text-sm md:text-base text-[#F4F4F1]/70 leading-relaxed mb-4">
+            Every commit carries intention. Write for the maintainer who will inherit your decisions at 2 AM. 
+            Clean code is selfless code. Technical debt is unresolved karma—it compounds until addressed.
+          </p>
+          <p className="text-xs md:text-sm text-[#F4F4F1]/50 italic font-serif">
+            "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions." — Bhagavad Gita 2.47
+          </p>
+        </div>
+
+        <div className="border-t border-[#2D2926] pt-8">
+          <h4 className="text-xl md:text-2xl font-light mb-4 tracking-tight">Simplicity as Samadhi</h4>
+          <p className="text-sm md:text-base text-[#F4F4F1]/70 leading-relaxed mb-4">
+            Complexity is ego masquerading as competence. The interface that disappears is the interface that serves. 
+            Remove until you cannot remove anymore. What remains is essence.
+          </p>
+          <p className="text-xs md:text-sm text-[#F4F4F1]/50 italic font-serif">
+            "Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away." — Antoine de Saint-Exupéry
+          </p>
+        </div>
+
+        <div className="border-t border-[#2D2926] pt-8">
+          <h4 className="text-xl md:text-2xl font-light mb-4 tracking-tight">Students as Stakeholders</h4>
+          <p className="text-sm md:text-base text-[#F4F4F1]/70 leading-relaxed mb-4">
+            Every student is an investment in future possibility. Their success is not my credential—it's their inheritance. 
+            Teach them to think, question, and build. Then step aside.
+          </p>
+          <p className="text-xs md:text-sm text-[#F4F4F1]/50 italic font-serif">
+            "When the student is ready, the teacher appears. When the student is truly ready, the teacher disappears."
+          </p>
+        </div>
+
+        <div className="border-t border-[#2D2926] pt-8">
+          <h4 className="text-xl md:text-2xl font-light mb-4 tracking-tight">Open Source as Yajna</h4>
+          <p className="text-sm md:text-base text-[#F4F4F1]/70 leading-relaxed mb-4">
+            Knowledge hoarded is knowledge wasted. Share without expectation. Document for strangers. 
+            Contribute to the commons. This is the highest form of work.
+          </p>
+          <p className="text-xs md:text-sm text-[#F4F4F1]/50 italic font-serif">
+            "The gift given without expectation of return, at the proper time and place, to a worthy recipient, is sattvic." — Bhagavad Gita 17.20
+          </p>
+        </div>
+      </div>
+
+      {/* Rate Website CTA */}
+      <div className="mt-16 md:mt-20 p-6 md:p-8 border border-[#2D2926] text-center">
+        <h4 className="text-lg md:text-xl font-light mb-4 tracking-tight">Your Feedback Shapes This Space</h4>
+        <p className="text-sm md:text-base text-[#F4F4F1]/70 mb-6 leading-relaxed">
+          This site is an iteration, not a destination. If it resonated or confused, improved or irritated—tell me. 
+          Honest feedback is the fastest path to clarity.
+        </p>
+        <a 
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeYDhe9BZB__bMvXxHY_EI6MCdnS63lhtoVHhttZjUfPgAR1Q/viewform?usp=header"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-3 border border-[#B85C38] text-[#B85C38] text-sm tracking-wider hover:bg-[#B85C38] hover:text-[#F4F4F1] transition-colors"
+        >
+          <Star className="w-4 h-4" />
+          <span>RATE THIS WEBSITE</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* Footer */}
+  <footer className="border-t border-[#2D2926] py-12 md:py-16 px-6 md:px-8">
+    <div className="max-w-5xl mx-auto">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
+        <div className="space-y-2">
+          <div className="text-sm text-[#F4F4F1]/50 tracking-wide">
+            Built with restraint. Maintained with intention.
+          </div>
+          <div className="text-xs text-[#F4F4F1]/40">
+            Chandra Kishor Jha • Teacher • Builder • Guide
+          </div>
+        </div>
+        
+        <div className="flex flex-wrap gap-6">
+          <a 
+            href="https://github.com/Originalckjha" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#F4F4F1]/50 hover:text-[#B85C38] transition-colors"
+            aria-label="GitHub"
+          >
+            <Github className="w-5 h-5" />
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/chandra-kishor-jha-276744184" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#F4F4F1]/50 hover:text-[#B85C38] transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="w-5 h-5" />
+          </a>
+          <a 
+            href="https://x.com/originalckjha" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#F4F4F1]/50 hover:text-[#B85C38] transition-colors"
+            aria-label="Twitter"
+          >
+            <Twitter className="w-5 h-5" />
+          </a>
+          <a 
+            href="mailto:ckjha903@gmail.com" 
+            className="text-[#F4F4F1]/50 hover:text-[#B85C38] transition-colors"
+            aria-label="Email"
+          >
+            <Mail className="w-5 h-5" />
+          </a>
+          <a 
+            href="https://thelearnex.blogspot.com/?m=1" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#F4F4F1]/50 hover:text-[#B85C38] transition-colors"
+            aria-label="Blog"
+          >
+            <MessageSquare className="w-5 h-5" />
+          </a>
+          <a 
+            href="https://linktr.ee/Ckjhaa?subscribe" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#F4F4F1]/50 hover:text-[#B85C38] transition-colors"
+            aria-label="Linktree"
+          >
+            <ExternalLink className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+
+      <div className="pt-8 border-t border-[#2D2926]/30 text-center">
+        <p className="text-xs text-[#F4F4F1]/40 tracking-wide">
+          © 2025 Chandra Kishor Jha. Built with React & Tailwind. Deployed with purpose.
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
 ```
 
-</head>
-<body>
-    <nav>
-        <div class="nav-content">
-            <div class="logo">CKJ</div>
-            <div class="burger" onclick="toggleMenu()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+);
+};
 
-```
-<section id="home" class="hero">
-    <div class="hero-content">
-        <h1>CHANDRA KISHOR <span>JHA</span></h1>
-        <h2 id="typing"></h2>
-        <a href="#projects" class="cta-btn">VIEW MY WORK</a>
-    </div>
-</section>
-
-<section id="about">
-    <h2 class="section-title">ABOUT ME</h2>
-    <div class="about-grid">
-        <div class="about-text">
-            <p>Hey! I'm Chandra, a web developer and educator who loves building things that live on the internet.</p>
-            <p>I've spent 6+ years teaching and mentoring 300+ students, helping them go from zero to building real projects.</p>
-            <p>When I'm not coding or teaching, I'm probably exploring new tech or working on side projects.</p>
-            <a href="https://docs.google.com/document/d/1cuhmuK3Mf4hjs4V6wnAF7zL-Id-19SuaqhaI0O9OYcY/edit?usp=drivesdk" target="_blank" class="resume-btn">DOWNLOAD RESUME</a>
-        </div>
-        <div class="stats">
-            <div class="stat-box">
-                <div class="stat-number">6+</div>
-                <div class="stat-label">Years Teaching</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">300+</div>
-                <div class="stat-label">Students</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Projects</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Passion</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="skills">
-    <h2 class="section-title">SKILLS</h2>
-    <div class="skills-grid">
-        <div class="skill-card">
-            <div class="skill-icon">🌐</div>
-            <div class="skill-name">HTML5</div>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">🎨</div>
-            <div class="skill-name">CSS3</div>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">⚡</div>
-            <div class="skill-name">JavaScript</div>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">⚛️</div>
-            <div class="skill-name">React</div>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">📦</div>
-            <div class="skill-name">Node.js</div>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">🔧</div>
-            <div class="skill-name">Git</div>
-        </div>
-    </div>
-</section>
-
-<section id="projects">
-    <h2 class="section-title">PROJECTS</h2>
-    <div class="projects-grid">
-        <div class="project-card">
-            <div class="project-img">💪</div>
-            <div class="project-info">
-                <h3 class="project-title">Weak to Strong</h3>
-                <p class="project-desc">Fitness platform helping people transform through structured programs and guidance.</p>
-                <div class="project-links">
-                    <a href="https://weaktostrong-git-main-chandra-kishor-jha-s-projects.vercel.app" target="_blank" class="project-link">LIVE</a>
-                    <a href="https://github.com/Originalckjha" target="_blank" class="project-link">CODE</a>
-                </div>
-            </div>
-        </div>
-        <div class="project-card">
-            <div class="project-img">📚</div>
-            <div class="project-info">
-                <h3 class="project-title">Learnex Blog</h3>
-                <p class="project-desc">Educational platform with web dev tutorials and programming insights.</p>
-                <div class="project-links">
-                    <a href="https://thelearnex.blogspot.com/?m=1" target="_blank" class="project-link">VISIT</a>
-                </div>
-            </div>
-        </div>
-        <div class="project-card">
-            <div class="project-img">🔗</div>
-            <div class="project-info">
-                <h3 class="project-title">Link Hub</h3>
-                <p class="project-desc">All my links in one place - social media, projects, and contact info.</p>
-                <div class="project-links">
-                    <a href="https://linktr.ee/Ckjhaa?subscribe" target="_blank" class="project-link">VIEW</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="experience">
-    <h2 class="section-title">EXPERIENCE</h2>
-    <div class="timeline">
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <div class="timeline-date">2018 - PRESENT</div>
-                <h3 class="timeline-title">Web Development Educator</h3>
-                <p class="timeline-desc">Teaching 300+ students web development, from basics to advanced concepts.</p>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <div class="timeline-date">2020 - PRESENT</div>
-                <h3 class="timeline-title">Freelance Developer</h3>
-                <p class="timeline-desc">Building websites and web apps for clients worldwide.</p>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <div class="timeline-date">2019 - PRESENT</div>
-                <h3 class="timeline-title">Content Creator</h3>
-                <p class="timeline-desc">Creating tutorials and guides to help developers learn.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <h2 class="section-title">GET IN TOUCH</h2>
-    <div class="contact-grid">
-        <form class="contact-form" onsubmit="handleSubmit(event)">
-            <div class="form-group">
-                <input type="text" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-                <input type="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <textarea placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">SEND MESSAGE</button>
-        </form>
-        <div class="contact-info">
-            <h3>Let's Work Together</h3>
-            <p>Got a project in mind? Want to learn web development? Or just want to say hi? Drop me a message!</p>
-            <p><strong>Email:</strong> ckjha903@gmail.com</p>
-            <div class="social-links">
-                <a href="https://github.com/Originalckjha" target="_blank" class="social-link">GitHub</a>
-                <a href="https://www.linkedin.com/in/chandra-kishor-jha-276744184" target="_blank" class="social-link">LinkedIn</a>
-                <a href="https://x.com/originalckjha" target="_blank" class="social-link">Twitter</a>
-                <a href="https://linktr.ee/Ckjhaa?subscribe" target="_blank" class="social-link">Linktree</a>
-            </div>
-            <div class="action-btns">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfN6vvvE600Utgi0w2_d_idpaOrTXy1MQdaWYMi22HzvtCvKg/viewform?usp=header" target="_blank" class="resume-btn">HIRE ME</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYDhe9BZB__bMvXxHY_EI6MCdnS63lhtoVHhttZjUfPgAR1Q/viewform?usp=header" target="_blank" class="resume-btn">RATE SITE</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <p>© 2025 Chandra Kishor Jha | Built with ❤️</p>
-</footer>
-
-<script>
-    // Typing Effect
-    const texts = ['WEB DEVELOPER', 'EDUCATOR', 'PROBLEM SOLVER', 'TECH ENTHUSIAST'];
-    let count = 0;
-    let index = 0;
-    let currentText = '';
-    let letter = '';
-
-    function type() {
-        if (count === texts.length) count = 0;
-        currentText = texts[count];
-        letter = currentText.slice(0, ++index);
-        document.getElementById('typing').textContent = letter;
-        if (letter.length === currentText.length) {
-            setTimeout(() => { index = 0; count++; }, 2000);
-        }
-        setTimeout(type, 150);
-    }
-    type();
-
-    // Mobile Menu
-    function toggleMenu() {
-        document.getElementById('navLinks').classList.toggle('active');
-    }
-
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-            document.getElementById('navLinks').classList.remove('active');
-        });
-    });
-
-    // Form Submit
-    function handleSubmit(e) {
-        e.preventDefault();
-        alert('Thanks! I\'ll get back to you soon.');
-        e.target.reset();
-    }
-
-    // Scroll Animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
-            }
-        });
-    });
-
-    document.querySelectorAll('.skill-card, .project-card, .timeline-item, .stat-box').forEach(el => {
-        observer.observe(el);
-    });
-</script>
-```
-
-</body>
-    
-</html>
+export default DigitalUpanishad;
