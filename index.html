@@ -134,6 +134,142 @@
             </div>
         </div>
     </section>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year Progress Tracker</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+
+        .tracker-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .date-display {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* The Gray Background Bar */
+        .progress-bar-bg {
+            background-color: #e0e0e0;
+            border-radius: 25px;
+            height: 30px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* The Colored Fill Bar */
+        .progress-bar-fill {
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            height: 100%;
+            width: 0%; /* JS will update this */
+            border-radius: 25px 0 0 25px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Text overlay on top of the bar */
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .highlight {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tracker-container">
+        <h1 id="year-label">2024 Progress</h1>
+        <div class="date-display" id="current-date">Loading date...</div>
+
+        <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+
+        <div class="progress-text">
+            <span id="percentage-text">0%</span>
+            <span><span id="days-left" class="highlight">0</span> days left</span>
+        </div>
+    </div>
+
+    <script>
+        function updateYearProgress() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            
+            // Define Start and End of the current year
+            const startOfYear = new Date(currentYear, 0, 1); // Jan 1st
+            const endOfYear = new Date(currentYear + 1, 0, 1); // Jan 1st next year
+            
+            // Calculate time values in milliseconds
+            const totalYearMillis = endOfYear - startOfYear;
+            const elapsedMillis = now - startOfYear;
+            
+            // Calculate Percentage
+            const percentage = (elapsedMillis / totalYearMillis) * 100;
+            
+            // Calculate Days Left (Math.ceil rounds up to nearest whole day)
+            const msPerDay = 1000 * 60 * 60 * 24;
+            const daysLeft = Math.ceil((endOfYear - now) / msPerDay);
+
+            // --- Update the DOM ---
+            
+            // 1. Update Title and Date
+            document.getElementById('year-label').textContent = `${currentYear} Progress`;
+            document.getElementById('current-date').textContent = now.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+
+            // 2. Update Bar Width and Percentage Text
+            document.getElementById('progress-fill').style.width = percentage + '%';
+            document.getElementById('percentage-text').textContent = percentage.toFixed(2) + '%';
+            
+            // 3. Update Days Left
+            document.getElementById('days-left').textContent = daysLeft;
+        }
+
+        // Run immediately on load
+        updateYearProgress();
+
+        // Optional: Update every minute so you don't have to refresh to see changes
+        setInterval(updateYearProgress, 60000);
+    </script>
+</body>
+</html>
+
 
     <footer id="contact" class="py-32 px-8 md:px-24 bg-akasha text-center border-t border-jala">
         <h2 class="text-xs uppercase tracking-[0.5em] text-vayu mb-8">Ready to Build?</h2>
