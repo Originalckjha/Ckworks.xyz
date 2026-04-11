@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chandra Kishor Jha | System Architect</title>
     <meta name="description" content="Personal portfolio of Chandra Kishor Jha. Systems thinking, architectural integrity, and technical leadership.">
-    
+
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
-    
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        akasha: '#080808', // Void Charcoal
-                        vayu: '#8E8E93',   // Ash Grey
-                        agni: '#B85C38',   // Copper Ember
-                        jala: '#12141D',   // Ink Blue
-                        prithvi: '#F2F2F7' // Bone White
+                        akasha: '#0D0A14',
+                        vayu: '#A78BCA',
+                        agni: '#8B5CF6',
+                        jala: '#1A1025',
+                        prithvi: '#F5F3FF'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -31,10 +31,10 @@
     </script>
 
     <style>
-        body { background-color: #080808; color: #F2F2F7; }
+        body { background-color: #0D0A14; color: #F5F3FF; }
         .kerning-tight { letter-spacing: -0.04em; }
         .mandala-grid {
-            background-image: radial-gradient(#12141D 1px, transparent 1px);
+            background-image: radial-gradient(#1A1025 1px, transparent 1px);
             background-size: 40px 40px;
         }
         .fade-in { animation: fadeIn 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
@@ -42,6 +42,10 @@
     </style>
 </head>
 <body class="mandala-grid font-sans antialiased">
+
+    <div id="scroll-progress"></div>
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
 
     <nav class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-6 flex justify-between items-center">
         <span class="font-bold tracking-tighter text-xl">CKJ.</span>
@@ -56,26 +60,26 @@
         <div class="fade-in space-y-4">
             <span class="text-agni font-mono text-sm tracking-widest uppercase">System Architect</span>
             <h1 class="text-6xl md:text-9xl font-light kerning-tight leading-none">
-                Chandra <br> <span class="font-bold text-vayu">Kishor Jha</span>
+                <span data-scramble>Chandra</span> <br> <span class="font-bold text-vayu" data-scramble>Kishor Jha</span>
             </h1>
             <p class="max-w-xl text-xl md:text-2xl font-serif italic text-vayu leading-relaxed pt-6">
                 "Translating high-level complexity into structural logic. Building tools that respect human intent."
             </p>
         </div>
-        
+
         <div class="absolute bottom-12 left-8 md:left-24 animate-bounce">
             <div class="w-[1px] h-12 bg-agni"></div>
         </div>
     </main>
 
     <section id="about" class="py-32 px-8 md:px-24 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
-        <div class="space-y-8">
+        <div class="space-y-8" data-reveal>
             <h2 class="text-xs uppercase tracking-[0.4em] text-agni font-bold">The Doctrine</h2>
             <p class="text-3xl font-light leading-snug">
                 Engineering is a form of <span class="font-serif italic text-vayu">Sadhana</span>—a disciplined pursuit of clarity.
             </p>
         </div>
-        <div class="text-vayu space-y-6 text-lg leading-relaxed">
+        <div class="text-vayu space-y-6 text-lg leading-relaxed" data-reveal data-delay="180">
             <p>
                 With over six years of technical immersion, I view software not as a collection of features, but as a living system. My approach is rooted in <strong>First Principles</strong>: deconstructing problems to their absolute zero (Shunya) before architecting a solution.
             </p>
@@ -87,12 +91,12 @@
 
     <section id="work" class="py-32 px-8 md:px-24 bg-jala/30">
         <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-16">
+            <div class="flex justify-between items-end mb-16" data-reveal>
                 <h2 class="text-xs uppercase tracking-[0.4em] text-agni font-bold">Selected Karma</h2>
-                <a href="https://github.com/Originalckjha" class="text-vayu hover:text-prithvi text-sm border-b border-vayu">View Github Repository</a>
+                <a href="https://github.com/Originalckjha" class="text-vayu hover:text-prithvi text-sm border-b border-vayu transition-colors">View Github Repository</a>
             </div>
 
-            <div class="group relative py-12 border-t border-vayu/20 grid md:grid-cols-3 gap-8 items-center hover:bg-jala/50 transition-all px-4">
+            <div class="project-row group relative py-12 border-t border-vayu/20 grid md:grid-cols-3 gap-8 items-center px-4" data-reveal data-delay="100">
                 <div class="text-xs font-mono text-vayu">01. Web Platform</div>
                 <div>
                     <h3 class="text-3xl font-bold mb-2">WeakToStrong</h3>
@@ -103,7 +107,7 @@
                 </div>
             </div>
 
-            <div class="group relative py-12 border-t border-b border-vayu/20 grid md:grid-cols-3 gap-8 items-center hover:bg-jala/50 transition-all px-4">
+            <div class="project-row group relative py-12 border-t border-b border-vayu/20 grid md:grid-cols-3 gap-8 items-center px-4" data-reveal data-delay="220">
                 <div class="text-xs font-mono text-vayu">02. Systems Design</div>
                 <div>
                     <h3 class="text-3xl font-bold mb-2">10+ Technical Interventions</h3>
@@ -118,17 +122,17 @@
 
     <section class="py-32 px-8 md:px-24 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-3 gap-12">
-            <div class="space-y-4">
+            <div class="space-y-4" data-reveal>
                 <span class="text-agni font-serif italic text-xl">Dharma.</span>
                 <h4 class="text-lg font-bold">Purpose Over Hype</h4>
                 <p class="text-vayu text-sm">Technology must serve a human need. If it is only flashy, it is failure.</p>
             </div>
-            <div class="space-y-4">
+            <div class="space-y-4" data-reveal data-delay="160">
                 <span class="text-agni font-serif italic text-xl">Tapasya.</span>
                 <h4 class="text-lg font-bold">Deep Refinement</h4>
                 <p class="text-vayu text-sm">The best systems are forged through hours of uninterrupted, obsessive focus.</p>
             </div>
-            <div class="space-y-4">
+            <div class="space-y-4" data-reveal data-delay="320">
                 <span class="text-agni font-serif italic text-xl">Satya.</span>
                 <h4 class="text-lg font-bold">Absolute Transparency</h4>
                 <p class="text-vayu text-sm">Code should be honest. No black boxes, no unnecessary complexity.</p>
@@ -136,22 +140,22 @@
         </div>
     </section>
 
-
-
     <footer id="contact" class="py-32 px-8 md:px-24 bg-akasha text-center border-t border-jala">
-        <h2 class="text-xs uppercase tracking-[0.5em] text-vayu mb-8">Ready to Build?</h2>
-        <a href="mailto:ckworkss@gmail.com" class="text-4xl md:text-6xl font-light hover:text-agni transition-colors duration-500 underline underline-offset-8 decoration-1">
-            ckworkss@gmail.com
-        </a>
-        
-        <div class="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-xs uppercase tracking-widest font-bold">
-            <a href="https://www.linkedin.com/in/chandra-kishor-jha-276744184" class="hover:text-agni">LinkedIn</a>
-            <a href="https://x.com/originalckjha" class="hover:text-agni">Twitter</a>
-            <a href="https://github.com/Originalckjha" class="hover:text-agni">GitHub</a>
-            <a href="https://linktr.ee/Ckjhaa" class="hover:text-agni">Network</a>
+        <h2 class="text-xs uppercase tracking-[0.5em] text-vayu mb-8" data-reveal>Ready to Build?</h2>
+        <div data-reveal data-delay="120">
+            <a href="mailto:ckworkss@gmail.com" data-magnetic class="text-4xl md:text-6xl font-light hover:text-agni transition-colors duration-500 underline underline-offset-8 decoration-1">
+                ckworkss@gmail.com
+            </a>
         </div>
 
-        <div class="mt-32 text-[10px] text-vayu/30 uppercase tracking-[0.3em]">
+        <div class="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-xs uppercase tracking-widest font-bold" data-reveal data-delay="240">
+            <a href="https://www.linkedin.com/in/chandra-kishor-jha-276744184" class="hover:text-agni transition-colors">LinkedIn</a>
+            <a href="https://x.com/originalckjha" class="hover:text-agni transition-colors">Twitter</a>
+            <a href="https://github.com/Originalckjha" class="hover:text-agni transition-colors">GitHub</a>
+            <a href="https://linktr.ee/Ckjhaa" class="hover:text-agni transition-colors">Network</a>
+        </div>
+
+        <div class="mt-32 text-[10px] text-vayu/30 uppercase tracking-[0.3em]" data-reveal data-delay="360">
             &copy; 2025 Chandra Kishor Jha &mdash; Built with Restraint.
         </div>
     </footer>
