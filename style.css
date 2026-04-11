@@ -14,14 +14,14 @@
 #cursor {
     width: 8px;
     height: 8px;
-    background: #F2F2F7;
+    background: #F5F3FF;
     transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
 }
 
 #cursor-follower {
     width: 36px;
     height: 36px;
-    border: 1px solid rgba(242, 242, 247, 0.35);
+    border: 1px solid rgba(245, 243, 255, 0.35);
     z-index: 9998;
     transition: width 0.28s ease, height 0.28s ease, border-color 0.28s ease;
 }
@@ -29,13 +29,13 @@
 body.cursor-hover #cursor {
     width: 16px;
     height: 16px;
-    background: #B85C38;
+    background: #8B5CF6;
 }
 
 body.cursor-hover #cursor-follower {
     width: 54px;
     height: 54px;
-    border-color: rgba(184, 92, 56, 0.5);
+    border-color: rgba(139, 92, 246, 0.5);
 }
 
 /* Hide cursor elements on touch devices */
@@ -52,7 +52,7 @@ body.cursor-hover #cursor-follower {
     top: 0;
     left: 0;
     height: 2px;
-    background: #B85C38;
+    background: #8B5CF6;
     z-index: 10000;
     width: 0%;
     transition: width 0.06s linear;
@@ -89,7 +89,7 @@ body.cursor-hover #cursor-follower {
 
 /* ---- Active Nav Link ---- */
 nav a.nav-active {
-    color: #B85C38;
+    color: #8B5CF6;
     text-decoration: underline;
     text-underline-offset: 4px;
 }
@@ -99,18 +99,18 @@ nav a.nav-active {
     width: 4px;
 }
 ::-webkit-scrollbar-track {
-    background: #080808;
+    background: #0D0A14;
 }
 ::-webkit-scrollbar-thumb {
-    background: #B85C38;
+    background: #8B5CF6;
     border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #d4693f;
+    background: #7C3AED;
 }
 
 /* ---- Text Selection ---- */
 ::selection {
-    background: #B85C38;
-    color: #F2F2F7;
+    background: #8B5CF6;
+    color: #F5F3FF;
 }
