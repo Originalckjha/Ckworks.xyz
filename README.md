@@ -16,9 +16,9 @@ A modern, responsive portfolio website showcasing my work as a Web Developer, En
 ## 🛠️ Technologies Used
 
 - HTML5
-- CSS3 (with CSS Variables)
+- Tailwind CSS (via CDN)
+- CSS3 (supplemental styles in `style.css`)
 - Vanilla JavaScript
-- No frameworks or libraries required
 
 ## 📂 Project Structure
 
@@ -150,7 +150,7 @@ Edit the skills in the Skills section of `index.html`:
 
 **Chandra Kishor Jha**
 
-- Email: ckjha903@gmail.com
+- Email: ckworkss@gmail.com
 - LinkedIn: [linkedin.com/in/chandra-kishor-jha-276744184](https://www.linkedin.com/in/chandra-kishor-jha-276744184)
 - GitHub: [github.com/Originalckjha](https://github.com/Originalckjha)
 - Twitter: [@originalckjha](https://x.com/originalckjha)
