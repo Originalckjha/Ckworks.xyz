@@ -61,13 +61,23 @@
         <!-- Particle canvas sits behind hero content -->
         <canvas id="particles-canvas" class="absolute inset-0 w-full h-full" style="z-index:0"></canvas>
 
-        <div class="fade-in space-y-4 relative" style="z-index:1">
-            <span class="shimmer-text font-mono text-sm tracking-widest uppercase">System Architect</span>
-            <h1 data-glitch class="text-6xl md:text-9xl font-light kerning-tight leading-none">
-                <span data-scramble>Chandra</span> <br> <span class="font-bold text-vayu" data-scramble>Kishor Jha</span>
-            </h1>
-            <p data-typewriter='"Translating high-level complexity into structural logic. Building tools that respect human intent."'
-               class="max-w-xl text-xl md:text-2xl font-serif italic text-vayu leading-relaxed pt-6"></p>
+        <div class="fade-in relative grid md:grid-cols-2 gap-12 items-center" style="z-index:1">
+            <!-- Text -->
+            <div class="space-y-4">
+                <span class="shimmer-text font-mono text-sm tracking-widest uppercase">System Architect</span>
+                <h1 data-glitch class="text-5xl md:text-8xl font-light kerning-tight leading-none">
+                    <span data-scramble>Chandra</span> <br> <span class="font-bold text-vayu" data-scramble>Kishor Jha</span>
+                </h1>
+                <p data-typewriter='"Translating high-level complexity into structural logic. Building tools that respect human intent."'
+                   class="max-w-xl text-lg md:text-xl font-serif italic text-vayu leading-relaxed pt-4"></p>
+            </div>
+
+            <!-- Avatar -->
+            <div class="flex justify-center md:justify-end order-first md:order-last">
+                <div class="avatar-wrapper">
+                    <img src="avatar.jpg" alt="Chandra Kishor Jha" class="avatar-img">
+                </div>
+            </div>
         </div>
 
         <div class="absolute bottom-12 left-8 md:left-24 scroll-indicator" style="z-index:1"></div>

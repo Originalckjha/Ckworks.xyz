@@ -202,6 +202,58 @@ nav a.nav-active {
 ::-webkit-scrollbar-thumb { background: #00D4FF; border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: #00AACC; }
 
+/* ---- Avatar ---- */
+.avatar-wrapper {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .avatar-wrapper { width: 340px; height: 340px; }
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    border: 2px solid rgba(0, 212, 255, 0.35);
+    box-shadow:
+        0 0 40px rgba(0, 212, 255, 0.15),
+        0 0 80px rgba(0, 212, 255, 0.07);
+    display: block;
+}
+
+/* Outer pulsing rings */
+.avatar-wrapper::before,
+.avatar-wrapper::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.avatar-wrapper::before {
+    inset: -6px;
+    border: 1px solid rgba(0, 212, 255, 0.45);
+    animation: avatar-ring 3.5s ease-in-out infinite;
+}
+
+.avatar-wrapper::after {
+    inset: -14px;
+    border: 1px solid rgba(0, 212, 255, 0.18);
+    animation: avatar-ring 3.5s ease-in-out infinite;
+    animation-delay: 0.8s;
+}
+
+@keyframes avatar-ring {
+    0%, 100% { transform: scale(1);    opacity: 0.6; }
+    50%       { transform: scale(1.03); opacity: 1;   }
+}
+
 /* ---- Text Selection ---- */
 ::selection {
     background: #00D4FF;
