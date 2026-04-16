@@ -1,0 +1,14 @@
+{
+  "name": "ckworks-xyz",
+  "version": "1.0.0",
+  "description": "Portfolio of Chandra Kishor Jha — System Architect & Educator",
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --outfile=script.js --target=es2020 --platform=browser",
+    "watch": "esbuild src/main.ts --bundle --outfile=script.js --target=es2020 --platform=browser --watch",
+    "build:min": "esbuild src/main.ts --bundle --outfile=script.js --target=es2020 --platform=browser --minify"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "typescript": "^6.0.0"
+  }
+}

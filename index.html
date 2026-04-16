@@ -181,6 +181,16 @@
 </head>
 <body class="mandala-grid font-sans antialiased">
 
+    <!-- Intro loader -->
+    <div id="loader">
+        <div id="loader-inner">
+            <div id="loader-text"></div>
+            <div id="loader-bar-track">
+                <div id="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
     <div id="scroll-progress"></div>
     <div id="cursor"></div>
     <div id="cursor-follower"></div>
@@ -218,15 +228,15 @@
                 <!-- Stats row -->
                 <div class="flex flex-wrap gap-6 pt-2">
                     <div class="stat-chip">
-                        <span class="stat-number shimmer-text font-bold text-2xl">7+</span>
+                        <span class="shimmer-text font-bold text-2xl" data-count="7" data-suffix="+">7+</span>
                         <span class="stat-label">Yrs Teaching</span>
                     </div>
                     <div class="stat-chip">
-                        <span class="stat-number shimmer-text font-bold text-2xl">300+</span>
+                        <span class="shimmer-text font-bold text-2xl" data-count="300" data-suffix="+">300+</span>
                         <span class="stat-label">Students</span>
                     </div>
                     <div class="stat-chip">
-                        <span class="stat-number shimmer-text font-bold text-2xl">6+</span>
+                        <span class="shimmer-text font-bold text-2xl" data-count="6" data-suffix="+">6+</span>
                         <span class="stat-label">Yrs in Tech</span>
                     </div>
                     <div class="stat-chip">
