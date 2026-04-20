@@ -40,7 +40,7 @@ export function initMagneticEmail(): void {
 // ── Perspective tilt ─────────────────────────────────────────────────────────
 
 export function initProjectTilt(): void {
-  document.querySelectorAll<HTMLElement>('.project-row').forEach(row => {
+  document.querySelectorAll<HTMLElement>('.project-card').forEach(row => {
     row.addEventListener('mousemove', (e: MouseEvent) => {
       const rect = row.getBoundingClientRect();
       const x = (e.clientX - rect.left)  / rect.width  - 0.5;
