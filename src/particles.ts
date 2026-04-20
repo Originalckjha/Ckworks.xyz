@@ -111,7 +111,11 @@ export function initParticles(): void {
   spawn();
   frame();
 
-  window.addEventListener('resize', () => { resize(); spawn(); }, { passive: true });
+  let resizeTimer: ReturnType<typeof setTimeout>;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => { resize(); spawn(); }, 150);
+  }, { passive: true });
 
   // Track mouse relative to canvas
   window.addEventListener('mousemove', (e: MouseEvent) => {
@@ -120,14 +124,14 @@ export function initParticles(): void {
     mouseY = e.clientY - rect.top;
   }, { passive: true });
 
-  // Ambient colour: cyan in hero/work, mint in tuition section
-  const tuitionEl = document.getElementById('tuition');
-  const workEl    = document.getElementById('work');
+  // Ambient colour: mint in teaching section, cyan everywhere else
+  const teachingEl = document.getElementById('teaching');
 
   window.addEventListener('scroll', () => {
+    if (!teachingEl) return;
     const y         = window.pageYOffset;
-    const tuitionY  = tuitionEl?.offsetTop ?? Infinity;
-    const workY     = workEl?.offsetTop    ?? Infinity;
-    targetColor = (y >= tuitionY - 200 && y < workY - 200) ? { ...MINT } : { ...CYAN };
+    const teachingY = teachingEl.offsetTop;
+    const pastEnd   = y > teachingY + teachingEl.offsetHeight - 200;
+    targetColor = (y >= teachingY - 200 && !pastEnd) ? { ...MINT } : { ...CYAN };
   }, { passive: true });
 }
