@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ═══ SEO ═══ -->
-    <title>Chandra Kishor Jha | System Architect & Full-Stack Developer — Delhi</title>
-    <meta name="description" content="Chandra Kishor Jha — System Architect and Full-Stack Developer based in Delhi with 6+ years in tech. TypeScript, React, Node.js, System Design. Open to consulting and freelance. Also available for home tuition in Rohini, Delhi.">
-    <meta name="keywords" content="system architect Delhi, full stack developer Delhi, TypeScript developer India, web developer Rohini, freelance developer Delhi, home tuition Rohini, computer science tutor Delhi">
+    <title>Chandra Kishor Jha | Software Engineer @ Trade Fabric · Full-Stack Developer — Delhi</title>
+    <meta name="description" content="Chandra Kishor Jha — Software Engineer at Trade Fabric & Full-Stack Developer based in Delhi with 8+ years in tech. TypeScript, React, Node.js, System Design. Educator, Consultant, Lifelong Learner.">
+    <meta name="keywords" content="software engineer Delhi, full stack developer Delhi, TypeScript developer India, Trade Fabric engineer, web developer Rohini, freelance developer Delhi, home tuition Rohini, computer science tutor Delhi, lifelong learner">
     <meta name="author" content="Chandra Kishor Jha">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://ckworks.xyz/">
@@ -34,7 +34,8 @@
           "@type": "Person",
           "@id": "https://ckworks.xyz/#person",
           "name": "Chandra Kishor Jha",
-          "jobTitle": ["System Architect", "Full-Stack Developer", "Educator"],
+          "jobTitle": ["Software Engineer", "Full-Stack Developer", "Educator", "System Architect"],
+          "worksFor": { "@type": "Organization", "name": "Trade Fabric" },
           "url": "https://ckworks.xyz",
           "image": "https://ckworks.xyz/avatar.jpg",
           "email": "ckworkss@gmail.com",
@@ -104,6 +105,108 @@
         }
         .fade-in { animation: fadeIn 1.4s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ═══ EXPERIENCE TIMELINE ═══ */
+        .timeline-container {
+            position: relative;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 7.5rem;
+            top: 0.3rem;
+            bottom: 3rem;
+            width: 1px;
+            background: linear-gradient(to bottom, rgba(0,212,255,0.9) 0%, rgba(0,255,178,0.7) 60%, rgba(91,127,166,0.2) 100%);
+        }
+        .tl-item {
+            display: grid;
+            grid-template-columns: 7.5rem 1.5rem 1fr;
+            gap: 0 1.5rem;
+            align-items: start;
+            padding-bottom: 2.75rem;
+            position: relative;
+        }
+        .tl-year {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: #5B7FA6;
+            text-align: right;
+            padding-top: 0.25rem;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+        }
+        .tl-year-current { color: #00FFB2; font-weight: 700; }
+        .tl-year-current span { display: block; font-size: 0.58rem; letter-spacing: 0.12em; opacity: 0.75; margin-top: 1px; }
+        .tl-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: #00D4FF;
+            box-shadow: 0 0 8px rgba(0,212,255,0.45);
+            margin-top: 0.3rem; flex-shrink: 0;
+            justify-self: center;
+        }
+        .tl-dot-edu { background: #00FFB2; box-shadow: 0 0 8px rgba(0,255,178,0.5); }
+        .tl-dot-current {
+            background: #00FFB2;
+            width: 14px; height: 14px;
+            margin-top: 0.15rem;
+            box-shadow: 0 0 16px rgba(0,255,178,0.9);
+            animation: tl-pulse 2.2s ease-in-out infinite;
+        }
+        @keyframes tl-pulse {
+            0%, 100% { box-shadow: 0 0 10px rgba(0,255,178,0.7); }
+            50%       { box-shadow: 0 0 28px rgba(0,255,178,1), 0 0 50px rgba(0,255,178,0.3); }
+        }
+        .tl-card {
+            background: rgba(10,22,40,0.55);
+            border: 1px solid rgba(91,127,166,0.12);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tl-card:hover { border-color: rgba(0,212,255,0.28); transform: translateX(5px); }
+        .tl-card-highlight { border-color: rgba(0,255,178,0.15); }
+        .tl-card-highlight:hover { border-color: rgba(0,255,178,0.4); }
+        .tl-card-current {
+            border-color: rgba(0,255,178,0.32);
+            background: rgba(0,255,178,0.03);
+            box-shadow: 0 0 40px rgba(0,255,178,0.06);
+        }
+        .tl-card-current:hover { border-color: rgba(0,255,178,0.55); transform: translateX(5px); box-shadow: 0 0 50px rgba(0,255,178,0.1); }
+        .tl-card-header {
+            display: flex; align-items: flex-start;
+            justify-content: space-between; gap: 1rem;
+            margin-bottom: 0.55rem; flex-wrap: wrap;
+        }
+        .tl-role { font-size: 1.05rem; font-weight: 700; color: #E8F4FD; line-height: 1.3; }
+        .tl-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.62rem; color: #5B7FA6;
+            border: 1px solid rgba(91,127,166,0.22);
+            border-radius: 4px; padding: 0.18rem 0.5rem;
+            white-space: nowrap; flex-shrink: 0;
+        }
+        .tl-badge-edu  { color: #00FFB2; border-color: rgba(0,255,178,0.3); }
+        .tl-badge-current { color: #00FFB2; border-color: rgba(0,255,178,0.4); background: rgba(0,255,178,0.07); font-weight: 700; }
+        .tl-desc { font-size: 0.875rem; color: #5B7FA6; line-height: 1.65; margin-bottom: 0.75rem; }
+        .tl-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+        .tl-tags span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.58rem; color: #00D4FF;
+            background: rgba(0,212,255,0.07);
+            border: 1px solid rgba(0,212,255,0.15);
+            border-radius: 3px; padding: 0.12rem 0.38rem;
+            text-transform: uppercase; letter-spacing: 0.06em;
+        }
+        .tl-item-current .tl-tags span {
+            color: #00FFB2; background: rgba(0,255,178,0.07); border-color: rgba(0,255,178,0.22);
+        }
+        @media (max-width: 640px) {
+            .timeline-container::before { left: 0; }
+            .tl-item { grid-template-columns: 0 1.25rem 1fr; gap: 0 0.875rem; }
+            .tl-year { display: none; }
+        }
     </style>
 </head>
 <body class="mandala-grid font-sans antialiased">
@@ -126,11 +229,12 @@
     <nav class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-5 flex justify-between items-center">
         <span class="font-mono font-bold tracking-tighter text-lg">CKJ<span class="text-agni">.</span></span>
         <div class="hidden md:flex space-x-8 text-xs uppercase tracking-[0.18em] text-vayu font-semibold">
-            <a href="#about"    class="hover:text-agni transition-colors">About</a>
-            <a href="#skills"   class="hover:text-agni transition-colors">Skills</a>
-            <a href="#projects" class="hover:text-agni transition-colors">Projects</a>
-            <a href="#teaching" class="hover:text-edu  transition-colors">Teaching</a>
-            <a href="#contact"  class="hover:text-agni transition-colors">Contact</a>
+            <a href="#about"      class="hover:text-agni transition-colors">About</a>
+            <a href="#experience" class="hover:text-agni transition-colors">Experience</a>
+            <a href="#skills"     class="hover:text-agni transition-colors">Skills</a>
+            <a href="#projects"   class="hover:text-agni transition-colors">Projects</a>
+            <a href="#teaching"   class="hover:text-edu  transition-colors">Teaching</a>
+            <a href="#contact"    class="hover:text-agni transition-colors">Contact</a>
         </div>
     </nav>
 
@@ -145,8 +249,8 @@
             <!-- Left: Text -->
             <div class="space-y-6">
                 <div class="flex items-center gap-3">
-                    <div class="w-2 h-2 rounded-full bg-agni animate-pulse"></div>
-                    <span class="font-mono text-agni text-xs tracking-widest uppercase">Available for Work</span>
+                    <div class="w-2 h-2 rounded-full bg-edu animate-pulse"></div>
+                    <span class="font-mono text-edu text-xs tracking-widest uppercase">Software Engineer @ Trade Fabric · Apr 2026</span>
                 </div>
 
                 <div>
@@ -158,22 +262,23 @@
                 </div>
 
                 <div class="font-mono text-vayu text-sm md:text-base space-y-1">
-                    <p><span class="text-agni">const</span> role = <span class="text-prithvi">"System Architect &amp; Full-Stack Dev"</span>;</p>
+                    <p><span class="text-agni">const</span> role = <span class="text-prithvi">"Software Engineer"</span>;</p>
+                    <p><span class="text-agni">const</span> company = <span class="text-edu">"Trade Fabric"</span>;</p>
                     <p><span class="text-agni">const</span> location = <span class="text-prithvi">"Delhi, India"</span>;</p>
-                    <p><span class="text-agni">const</span> experience = <span class="text-edu">6</span> + <span class="text-prithvi">" years in production"</span>;</p>
+                    <p><span class="text-agni">const</span> experience = <span class="text-edu">8</span> + <span class="text-prithvi">" years · builder · educator"</span>;</p>
                 </div>
 
-                <p data-typewriter='"Building systems that scale. Writing code that lasts."'
+                <p data-typewriter='"Always learning. Always building. Always teaching."'
                    class="text-lg font-serif italic text-vayu max-w-md leading-relaxed"></p>
 
                 <!-- Stats -->
                 <div class="flex flex-wrap gap-6 pt-2 border-t border-vayu/10">
                     <div class="stat-chip">
-                        <span class="shimmer-text font-bold text-xl" data-count="6" data-suffix="+">6+</span>
+                        <span class="shimmer-text font-bold text-xl" data-count="8" data-suffix="+">8+</span>
                         <span class="stat-label">Yrs in Tech</span>
                     </div>
                     <div class="stat-chip">
-                        <span class="shimmer-text font-bold text-xl" data-count="10" data-suffix="+">10+</span>
+                        <span class="shimmer-text font-bold text-xl" data-count="13" data-suffix="+">13+</span>
                         <span class="stat-label">Projects Shipped</span>
                     </div>
                     <div class="stat-chip">
@@ -184,8 +289,8 @@
 
                 <!-- CTAs -->
                 <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="#projects" class="cta-primary">View Projects</a>
-                    <a href="#contact"  class="cta-secondary">Hire Me</a>
+                    <a href="#projects"   class="cta-primary">View Projects</a>
+                    <a href="#experience" class="cta-secondary">My Journey</a>
                     <a href="https://github.com/Originalckjha" target="_blank" rel="noopener" class="cta-ghost">GitHub ↗</a>
                 </div>
             </div>
@@ -194,7 +299,7 @@
             <div class="flex justify-center md:justify-end order-first md:order-last">
                 <div class="avatar-wrapper">
                     <img src="avatar.jpg" alt="Chandra Kishor Jha — System Architect Delhi" class="avatar-img">
-                    <div class="avatar-badge-tech">ARCH</div>
+                    <div class="avatar-badge-tech">SWE</div>
                     <div class="avatar-badge-edu">EDU</div>
                 </div>
             </div>
@@ -210,23 +315,28 @@
         <div class="grid md:grid-cols-5 gap-16 items-start">
             <div class="md:col-span-2 space-y-6" data-reveal>
                 <p class="font-mono text-xs uppercase tracking-[0.4em] text-agni">// About</p>
-                <h2 class="text-4xl font-bold kerning-tight">Systems thinker.<br>Product builder.</h2>
+                <h2 class="text-4xl font-bold kerning-tight">Engineer.<br>Educator.<br>Learner.</h2>
                 <div class="w-12 h-px bg-agni"></div>
                 <p class="text-vayu text-sm font-mono">Based in <span class="text-prithvi">Delhi, India</span></p>
+                <p class="font-mono text-xs text-edu/80 border border-edu/20 rounded-lg px-3 py-2 bg-edu/5">
+                    ↳ Software Engineer @ <span class="text-edu font-bold">Trade Fabric</span><br>
+                    <span class="text-vayu">Since April 2026</span>
+                </p>
             </div>
             <div class="md:col-span-3 space-y-5 text-vayu text-lg leading-relaxed" data-reveal data-delay="150">
                 <p>
-                    I architect and build web systems end-to-end — from database schema to deployed UI. My work sits at the intersection of
-                    <strong class="text-prithvi">system design</strong>, <strong class="text-prithvi">clean code</strong>, and
-                    <strong class="text-prithvi">measurable outcomes</strong>.
+                    I build web systems end-to-end — from database schema to deployed UI. Currently engineering at
+                    <strong class="text-edu">Trade Fabric</strong>, where I apply 8 years of freelance, teaching, and open-source
+                    experience to real production challenges.
                 </p>
                 <p>
                     Rooted in <strong class="text-agni">First Principles</strong> thinking: every component must justify its existence.
                     No bloat. No unnecessary abstraction. Just systems that work.
                 </p>
                 <p>
-                    Currently open to <strong class="text-prithvi">freelance consulting</strong> and
-                    <strong class="text-prithvi">full-time opportunities</strong> in product engineering and architecture.
+                    I've worn many hats — freelancer, CS teacher, student consultant, Clapingo moderator — and every role made me a
+                    sharper engineer. I am, above all, a <strong class="text-prithvi">lifelong learner</strong>. The day I stop
+                    learning is the day I stop building.
                 </p>
                 <div class="flex flex-wrap gap-3 pt-2">
                     <a href="https://github.com/Originalckjha"                           target="_blank" rel="noopener" class="inline-chip">GitHub ↗</a>
@@ -234,6 +344,132 @@
                     <a href="https://linktr.ee/Ckjhaa"                                  target="_blank" rel="noopener" class="inline-chip">Linktree ↗</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         EXPERIENCE TIMELINE
+    ════════════════════════════════════════ -->
+    <section id="experience" class="py-28 px-8 md:px-24 bg-jala/20">
+        <div class="max-w-5xl mx-auto">
+
+            <div class="mb-16" data-reveal>
+                <p class="font-mono text-xs uppercase tracking-[0.4em] text-agni mb-3">// Journey</p>
+                <h2 class="text-4xl font-bold kerning-tight">8 years of building,<br>teaching &amp; growing.</h2>
+                <p class="text-vayu text-lg mt-5 max-w-2xl leading-relaxed">
+                    Freelancer. Educator. Consultant. Now Engineer.
+                    <span class="text-agni font-semibold">A lifelong learner</span> who never stopped.
+                </p>
+            </div>
+
+            <div class="timeline-container" data-reveal data-delay="100">
+
+                <!-- 2018: Origin -->
+                <div class="tl-item">
+                    <div class="tl-year">2018</div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-card-header">
+                            <h3 class="tl-role">Freelance Developer &amp; Private Tutor</h3>
+                            <span class="tl-badge">Self-Employed · Delhi</span>
+                        </div>
+                        <p class="tl-desc">Started independently — building web projects for clients and teaching Math, Computer Science &amp; Python to school students in Rohini, Delhi. First-principles from day one. The grind begins.</p>
+                        <div class="tl-tags">
+                            <span>Freelancing</span><span>Home Tuition</span><span>Web Dev</span><span>Delhi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institute Teacher -->
+                <div class="tl-item">
+                    <div class="tl-year">2019 – 2022</div>
+                    <div class="tl-dot tl-dot-edu"></div>
+                    <div class="tl-card">
+                        <div class="tl-card-header">
+                            <h3 class="tl-role">CS &amp; Mathematics Teacher</h3>
+                            <span class="tl-badge tl-badge-edu">Coaching Institute · Delhi</span>
+                        </div>
+                        <p class="tl-desc">Taught Computer Science and Mathematics to Class 10–12 students at a coaching institute. Built curriculum from scratch, guided students through boards, and turned confusion into clarity for 100+ learners. Parallel to freelancing.</p>
+                        <div class="tl-tags">
+                            <span>CBSE CS</span><span>Mathematics</span><span>Curriculum Design</span><span>100+ Students</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Consulting + Open Source -->
+                <div class="tl-item">
+                    <div class="tl-year">2020 – 2023</div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-card-header">
+                            <h3 class="tl-role">Student Consultant &amp; Open Source Developer</h3>
+                            <span class="tl-badge">Freelance · GitHub</span>
+                        </div>
+                        <p class="tl-desc">One-on-one mentoring for college students — career roadmaps, project reviews, system design fundamentals. Simultaneously joined GitHub (June 2020) and began shipping real open-source tools. No tutorials, only production-grade output.</p>
+                        <div class="tl-tags">
+                            <span>Mentoring</span><span>System Design</span><span>Open Source</span><span>GitHub ↗ 2020</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clapingo -->
+                <div class="tl-item">
+                    <div class="tl-year">2023 – 2024</div>
+                    <div class="tl-dot tl-dot-edu"></div>
+                    <div class="tl-card tl-card-highlight">
+                        <div class="tl-card-header">
+                            <h3 class="tl-role">Moderator</h3>
+                            <span class="tl-badge tl-badge-edu">Clapingo · EdTech</span>
+                        </div>
+                        <p class="tl-desc">Worked with Clapingo — a leading English-speaking practice platform — as a Moderator. Ensured quality of learning sessions, maintained community standards, and guided learners through communication improvement journeys at scale.</p>
+                        <div class="tl-tags">
+                            <span>EdTech</span><span>Community</span><span>Communication</span><span>Content Quality</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Independent dev + projects -->
+                <div class="tl-item">
+                    <div class="tl-year">2024 – 2025</div>
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-card-header">
+                            <h3 class="tl-role">Independent Developer &amp; Educator</h3>
+                            <span class="tl-badge">Freelance · Self-Directed</span>
+                        </div>
+                        <p class="tl-desc">Shipped 4 production projects — FinVeda (AI finance platform), WeakToStrong (skill tracker built in 8 hours), CodeArcade (GitHub scorecard), CBSE Educator Dashboard. Continued private tutoring and student consulting. Total: 300+ students shaped.</p>
+                        <div class="tl-tags">
+                            <span>FinVeda</span><span>WeakToStrong</span><span>CodeArcade</span><span>CBSE Dashboard</span><span>300+ Students</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trade Fabric — CURRENT -->
+                <div class="tl-item tl-item-current">
+                    <div class="tl-year tl-year-current">Apr 2026 <span>· NOW</span></div>
+                    <div class="tl-dot tl-dot-current"></div>
+                    <div class="tl-card tl-card-current">
+                        <div class="tl-card-header">
+                            <h3 class="tl-role">Software Engineer</h3>
+                            <span class="tl-badge tl-badge-current">Trade Fabric · Full-Time</span>
+                        </div>
+                        <p class="tl-desc">Building production systems at Trade Fabric. Writing code that ships, designing systems that scale. Applying 8 years of freelance hustle, classroom teaching, and open-source discipline to real engineering challenges — every single day.</p>
+                        <div class="tl-tags">
+                            <span>Trade Fabric</span><span>Production Systems</span><span>Software Engineering</span><span>Full-Time</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Lifelong learner quote -->
+            <div class="mt-16 text-center border-t border-vayu/10 pt-12" data-reveal data-delay="250">
+                <p class="font-serif italic text-vayu text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto">
+                    "The best engineers never stop being students.<br>The best teachers never stop learning."
+                </p>
+                <p class="font-mono text-agni text-xs mt-4 tracking-[0.3em] uppercase">— A lifelong learner</p>
+            </div>
+
         </div>
     </section>
 
@@ -410,21 +646,26 @@
          PRINCIPLES
     ════════════════════════════════════════ -->
     <section class="py-20 px-8 md:px-24 bg-jala/20">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="principle-card space-y-3 p-8 border border-vayu/10" data-reveal>
                 <span class="shimmer-text font-serif italic text-xl">Dharma.</span>
                 <h4 class="font-bold">Purpose Over Hype</h4>
                 <p class="text-vayu text-sm leading-relaxed">Every line of code must serve a real need. If it only looks impressive, it's already failed.</p>
             </div>
-            <div class="principle-card space-y-3 p-8 border border-vayu/10" data-reveal data-delay="140">
+            <div class="principle-card space-y-3 p-8 border border-vayu/10" data-reveal data-delay="100">
                 <span class="shimmer-text font-serif italic text-xl">Tapasya.</span>
                 <h4 class="font-bold">Obsessive Refinement</h4>
                 <p class="text-vayu text-sm leading-relaxed">The best systems are forged through deep, uninterrupted focus — not shallow iteration.</p>
             </div>
-            <div class="principle-card space-y-3 p-8 border border-vayu/10" data-reveal data-delay="280">
+            <div class="principle-card space-y-3 p-8 border border-vayu/10" data-reveal data-delay="200">
                 <span class="shimmer-text font-serif italic text-xl">Satya.</span>
                 <h4 class="font-bold">Radical Transparency</h4>
                 <p class="text-vayu text-sm leading-relaxed">Code should be honest. No black boxes. No accidental complexity. Truth in every commit.</p>
+            </div>
+            <div class="principle-card space-y-3 p-8 border border-vayu/10" data-reveal data-delay="300" style="border-color:rgba(0,255,178,0.12)">
+                <span style="background:linear-gradient(90deg,#00FFB2,#00D4FF,#00FFB2);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite" class="font-serif italic text-xl">Jigyasa.</span>
+                <h4 class="font-bold">Lifelong Learning</h4>
+                <p class="text-vayu text-sm leading-relaxed">Curiosity is the engine. Every role — teacher, moderator, engineer — made me sharper. The learning never stops.</p>
             </div>
         </div>
     </section>
@@ -440,19 +681,19 @@
                 <div class="teaching-mode-badge">📚 EDUCATOR MODE</div>
                 <h2 class="text-4xl md:text-5xl font-bold kerning-tight mt-6">
                     I also teach.<br>
-                    <span class="edu-shimmer">7 years. 300+ students.</span>
+                    <span class="edu-shimmer">8 years. 300+ students.</span>
                 </h2>
                 <p class="text-vayu text-lg mt-6 max-w-2xl leading-relaxed">
-                    Parallel to my tech career, I've been a dedicated home tutor in
+                    Parallel to my engineering career, I've been a dedicated home tutor and institute teacher in
                     <strong class="text-edu">Rohini, Delhi</strong> — translating complex concepts into
-                    lasting understanding for school and college students.
+                    lasting understanding for school and college students. Teaching made me a better engineer.
                 </p>
             </div>
 
             <!-- Stats -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16" data-reveal data-delay="100">
                 <div class="edu-stat-card">
-                    <span class="edu-stat-number" data-count="7" data-suffix="+">7+</span>
+                    <span class="edu-stat-number" data-count="8" data-suffix="+">8+</span>
                     <span class="edu-stat-label">Years Teaching</span>
                 </div>
                 <div class="edu-stat-card">
@@ -515,12 +756,13 @@
          CONTACT / FOOTER
     ════════════════════════════════════════ -->
     <footer id="contact" class="py-28 px-8 md:px-24 bg-akasha border-t border-jala text-center">
-        <p class="font-mono text-xs uppercase tracking-[0.4em] text-vayu mb-6" data-reveal>// Let's Build Something</p>
+        <p class="font-mono text-xs uppercase tracking-[0.4em] text-vayu mb-6" data-reveal>// Let's Connect</p>
         <h2 class="text-3xl md:text-5xl font-bold kerning-tight mb-4" data-reveal data-delay="80">
-            Open to work.<br>Open to ideas.
+            Building at Trade Fabric.<br>
+            <span class="text-agni">Always open to ideas.</span>
         </h2>
         <p class="text-vayu mb-12 max-w-md mx-auto" data-reveal data-delay="160">
-            Freelance projects, full-time roles, consulting, or tuition — reach out and let's talk.
+            Collaborations, open source, student consulting, or just a good engineering conversation — reach out.
         </p>
 
         <div data-reveal data-delay="200">
