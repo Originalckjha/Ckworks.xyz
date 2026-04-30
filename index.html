@@ -81,10 +81,10 @@
                     colors: {
                         akasha:  '#050B14',
                         vayu:    '#5B7FA6',
-                        agni:    '#00D4FF',
+                        agni:    '#5BA8D4',
                         jala:    '#0A1628',
                         prithvi: '#E8F4FD',
-                        edu:     '#00FFB2'
+                        edu:     '#47BFA6'
                     },
                     fontFamily: {
                         sans:  ['Inter', 'sans-serif'],
@@ -117,7 +117,7 @@
             top: 0.3rem;
             bottom: 3rem;
             width: 1px;
-            background: linear-gradient(to bottom, rgba(0,212,255,0.9) 0%, rgba(0,255,178,0.7) 60%, rgba(91,127,166,0.2) 100%);
+            background: linear-gradient(to bottom, rgba(91,168,212,0.9) 0%, rgba(71,191,166,0.7) 60%, rgba(91,127,166,0.2) 100%);
         }
         .tl-item {
             display: grid;
@@ -136,27 +136,27 @@
             line-height: 1.5;
             letter-spacing: 0.02em;
         }
-        .tl-year-current { color: #00FFB2; font-weight: 700; }
+        .tl-year-current { color: #47BFA6; font-weight: 700; }
         .tl-year-current span { display: block; font-size: 0.58rem; letter-spacing: 0.12em; opacity: 0.75; margin-top: 1px; }
         .tl-dot {
             width: 10px; height: 10px;
             border-radius: 50%;
-            background: #00D4FF;
-            box-shadow: 0 0 8px rgba(0,212,255,0.45);
+            background: #5BA8D4;
+            box-shadow: 0 0 8px rgba(91,168,212,0.45);
             margin-top: 0.3rem; flex-shrink: 0;
             justify-self: center;
         }
-        .tl-dot-edu { background: #00FFB2; box-shadow: 0 0 8px rgba(0,255,178,0.5); }
+        .tl-dot-edu { background: #47BFA6; box-shadow: 0 0 8px rgba(71,191,166,0.5); }
         .tl-dot-current {
-            background: #00FFB2;
+            background: #47BFA6;
             width: 14px; height: 14px;
             margin-top: 0.15rem;
-            box-shadow: 0 0 16px rgba(0,255,178,0.9);
+            box-shadow: 0 0 16px rgba(71,191,166,0.9);
             animation: tl-pulse 2.2s ease-in-out infinite;
         }
         @keyframes tl-pulse {
-            0%, 100% { box-shadow: 0 0 10px rgba(0,255,178,0.7); }
-            50%       { box-shadow: 0 0 28px rgba(0,255,178,1), 0 0 50px rgba(0,255,178,0.3); }
+            0%, 100% { box-shadow: 0 0 10px rgba(71,191,166,0.7); }
+            50%       { box-shadow: 0 0 28px rgba(71,191,166,1), 0 0 50px rgba(71,191,166,0.3); }
         }
         .tl-card {
             background: rgba(10,22,40,0.55);
@@ -165,15 +165,15 @@
             padding: 1.2rem 1.4rem;
             transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .tl-card:hover { border-color: rgba(0,212,255,0.28); transform: translateX(5px); }
-        .tl-card-highlight { border-color: rgba(0,255,178,0.15); }
-        .tl-card-highlight:hover { border-color: rgba(0,255,178,0.4); }
+        .tl-card:hover { border-color: rgba(91,168,212,0.28); transform: translateX(5px); }
+        .tl-card-highlight { border-color: rgba(71,191,166,0.15); }
+        .tl-card-highlight:hover { border-color: rgba(71,191,166,0.4); }
         .tl-card-current {
-            border-color: rgba(0,255,178,0.32);
-            background: rgba(0,255,178,0.03);
-            box-shadow: 0 0 40px rgba(0,255,178,0.06);
+            border-color: rgba(71,191,166,0.32);
+            background: rgba(71,191,166,0.03);
+            box-shadow: 0 0 40px rgba(71,191,166,0.06);
         }
-        .tl-card-current:hover { border-color: rgba(0,255,178,0.55); transform: translateX(5px); box-shadow: 0 0 50px rgba(0,255,178,0.1); }
+        .tl-card-current:hover { border-color: rgba(71,191,166,0.55); transform: translateX(5px); box-shadow: 0 0 50px rgba(71,191,166,0.1); }
         .tl-card-header {
             display: flex; align-items: flex-start;
             justify-content: space-between; gap: 1rem;
@@ -187,20 +187,20 @@
             border-radius: 4px; padding: 0.18rem 0.5rem;
             white-space: nowrap; flex-shrink: 0;
         }
-        .tl-badge-edu  { color: #00FFB2; border-color: rgba(0,255,178,0.3); }
-        .tl-badge-current { color: #00FFB2; border-color: rgba(0,255,178,0.4); background: rgba(0,255,178,0.07); font-weight: 700; }
+        .tl-badge-edu  { color: #47BFA6; border-color: rgba(71,191,166,0.3); }
+        .tl-badge-current { color: #47BFA6; border-color: rgba(71,191,166,0.4); background: rgba(71,191,166,0.07); font-weight: 700; }
         .tl-desc { font-size: 0.875rem; color: #5B7FA6; line-height: 1.65; margin-bottom: 0.75rem; }
         .tl-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
         .tl-tags span {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.58rem; color: #00D4FF;
-            background: rgba(0,212,255,0.07);
-            border: 1px solid rgba(0,212,255,0.15);
+            font-size: 0.58rem; color: #5BA8D4;
+            background: rgba(91,168,212,0.07);
+            border: 1px solid rgba(91,168,212,0.15);
             border-radius: 3px; padding: 0.12rem 0.38rem;
             text-transform: uppercase; letter-spacing: 0.06em;
         }
         .tl-item-current .tl-tags span {
-            color: #00FFB2; background: rgba(0,255,178,0.07); border-color: rgba(0,255,178,0.22);
+            color: #47BFA6; background: rgba(71,191,166,0.07); border-color: rgba(71,191,166,0.22);
         }
         @media (max-width: 640px) {
             .timeline-container::before { left: 0; }
@@ -662,8 +662,8 @@
                 <h4 class="font-bold">Radical Transparency</h4>
                 <p class="text-vayu text-sm leading-relaxed">Code should be honest. No black boxes. No accidental complexity. Truth in every commit.</p>
             </div>
-            <div class="principle-card space-y-3 p-8 border border-vayu/10" data-reveal data-delay="300" style="border-color:rgba(0,255,178,0.12)">
-                <span style="background:linear-gradient(90deg,#00FFB2,#00D4FF,#00FFB2);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite" class="font-serif italic text-xl">Jigyasa.</span>
+            <div class="principle-card space-y-3 p-8 border border-vayu/10" data-reveal data-delay="300" style="border-color:rgba(71,191,166,0.12)">
+                <span style="background:linear-gradient(90deg,#47BFA6,#5BA8D4,#47BFA6);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite" class="font-serif italic text-xl">Jigyasa.</span>
                 <h4 class="font-bold">Lifelong Learning</h4>
                 <p class="text-vayu text-sm leading-relaxed">Curiosity is the engine. Every role — teacher, moderator, engineer — made me sharper. The learning never stops.</p>
             </div>
@@ -705,7 +705,7 @@
                     <span class="edu-stat-label">Covered</span>
                 </div>
                 <div class="edu-stat-card">
-                    <span class="edu-stat-number" style="-webkit-text-fill-color:#00FFB2;color:#00FFB2;">Rohini</span>
+                    <span class="edu-stat-number" style="-webkit-text-fill-color:#47BFA6;color:#47BFA6;">Rohini</span>
                     <span class="edu-stat-label">Delhi + Nearby</span>
                 </div>
             </div>
