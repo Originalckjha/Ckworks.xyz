@@ -5,7 +5,7 @@ export const meta = {
   handle:       'CKWorks',
   shortName:    'CK JHA',
   role:         'Software Engineer',
-  company:      'a startup',
+  company:      'Trade Fabric',
   companyStart: 'April 2026',
   location:     'Delhi, India',
   email:        'ckworkss@gmail.com',
