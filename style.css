@@ -6,7 +6,7 @@
 #loader {
     position: fixed;
     inset: 0;
-    background: #050B14;
+    background: #07080F;
     z-index: 100000;
     display: flex;
     align-items: center;
@@ -26,7 +26,7 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 3rem;
     font-weight: 700;
-    color: #00D4FF;
+    color: #7C5CED;
     letter-spacing: -0.04em;
     margin-bottom: 2rem;
     min-height: 1.2em;
@@ -35,7 +35,7 @@
 #loader-bar-track {
     width: 200px;
     height: 2px;
-    background: rgba(0, 212, 255, 0.15);
+    background: rgba(124, 92, 237, 0.15);
     border-radius: 2px;
     overflow: hidden;
     margin: 0 auto;
@@ -44,7 +44,7 @@
 #loader-bar {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, #00D4FF, #00FFB2);
+    background: linear-gradient(90deg, #7C5CED, #F4A028);
     border-radius: 2px;
     transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -58,7 +58,7 @@
 }
 
 .shimmer-text {
-    background: linear-gradient(90deg, #00D4FF, #00FFB2, #00D4FF);
+    background: linear-gradient(90deg, #7C5CED, #F4A028, #7C5CED);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -96,7 +96,7 @@ h1.glitch-active {
     height: 12px;
     border-radius: 50%;
     background: transparent;
-    border: 1px solid rgba(0, 212, 255, 0.55);
+    border: 1px solid rgba(124, 92, 237, 0.55);
     transform: translate(-50%, -50%) scale(0);
     pointer-events: none;
     z-index: 9996;
@@ -138,8 +138,8 @@ h1.glitch-active {
     font-size: 1.75rem;
     font-weight: 800;
     letter-spacing: 0.12em;
-    color: #00D4FF;
-    text-shadow: 0 0 30px rgba(0, 212, 255, 0.9), 0 0 60px rgba(0, 212, 255, 0.4);
+    color: #7C5CED;
+    text-shadow: 0 0 30px rgba(124, 92, 237, 0.9), 0 0 60px rgba(124, 92, 237, 0.4);
     pointer-events: none;
     z-index: 99999;
     animation: konami-flash 2.5s ease-in-out forwards;
@@ -216,20 +216,20 @@ h1.glitch-active {
     object-fit: cover;
     border-radius: 16px;
     filter: grayscale(15%) contrast(1.05);
-    border: 1px solid rgba(0, 212, 255, 0.18);
+    border: 1px solid rgba(124, 92, 237, 0.18);
     box-shadow:
-        0 0 60px rgba(0, 212, 255, 0.08),
-        0 0 120px rgba(0, 212, 255, 0.04),
+        0 0 60px rgba(124, 92, 237, 0.08),
+        0 0 120px rgba(124, 92, 237, 0.04),
         0 24px 64px rgba(0, 0, 0, 0.5);
     transition: filter 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .avatar-wrapper:hover .avatar-img {
     filter: grayscale(0%) contrast(1.08);
-    border-color: rgba(0, 212, 255, 0.35);
+    border-color: rgba(124, 92, 237, 0.35);
     box-shadow:
-        0 0 80px rgba(0, 212, 255, 0.14),
-        0 0 160px rgba(0, 212, 255, 0.06),
+        0 0 80px rgba(124, 92, 237, 0.14),
+        0 0 160px rgba(124, 92, 237, 0.06),
         0 24px 64px rgba(0, 0, 0, 0.5);
 }
 
@@ -248,18 +248,18 @@ h1.glitch-active {
     top: -12px;
     right: -12px;
     background: rgba(5, 11, 20, 0.9);
-    border: 1px solid rgba(0, 212, 255, 0.5);
-    color: #00D4FF;
-    box-shadow: 0 0 16px rgba(0, 212, 255, 0.2);
+    border: 1px solid rgba(124, 92, 237, 0.5);
+    color: #7C5CED;
+    box-shadow: 0 0 16px rgba(124, 92, 237, 0.2);
 }
 
 .avatar-badge-edu {
     bottom: -12px;
     left: -12px;
     background: rgba(5, 11, 20, 0.9);
-    border: 1px solid rgba(0, 255, 178, 0.5);
-    color: #00FFB2;
-    box-shadow: 0 0 16px rgba(0, 255, 178, 0.2);
+    border: 1px solid rgba(244, 160, 40, 0.5);
+    color: #F4A028;
+    box-shadow: 0 0 16px rgba(244, 160, 40, 0.2);
 }
 
 /* ================================================================
@@ -273,7 +273,7 @@ h1.glitch-active {
 
 .principle-card:hover {
     background: rgba(10, 22, 40, 0.65);
-    border-color: rgba(0, 212, 255, 0.2) !important;
+    border-color: rgba(124, 92, 237, 0.2) !important;
     transform: translateY(-4px);
 }
 
@@ -282,8 +282,8 @@ h1.glitch-active {
    ================================================================ */
 .subject-card {
     padding: 1.75rem;
-    background: rgba(0, 255, 178, 0.02);
-    border: 1px solid rgba(0, 255, 178, 0.1);
+    background: rgba(244, 160, 40, 0.02);
+    border: 1px solid rgba(244, 160, 40, 0.1);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -291,8 +291,8 @@ h1.glitch-active {
 }
 
 .subject-card:hover {
-    border-color: rgba(0, 255, 178, 0.3);
-    background: rgba(0, 255, 178, 0.05);
+    border-color: rgba(244, 160, 40, 0.3);
+    background: rgba(244, 160, 40, 0.05);
     transform: translateY(-3px);
 }
 
@@ -327,9 +327,9 @@ h1.glitch-active {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-family: 'JetBrains Mono', monospace;
-    color: #00FFB2;
-    background: rgba(0, 255, 178, 0.08);
-    border: 1px solid rgba(0, 255, 178, 0.22);
+    color: #F4A028;
+    background: rgba(244, 160, 40, 0.08);
+    border: 1px solid rgba(244, 160, 40, 0.22);
 }
 
 .cta-card {
@@ -340,7 +340,7 @@ h1.glitch-active {
    EDU SHIMMER (Teaching header)
    ================================================================ */
 .edu-shimmer {
-    background: linear-gradient(90deg, #00FFB2, #00D4FF, #00FFB2);
+    background: linear-gradient(90deg, #F4A028, #7C5CED, #F4A028);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -377,13 +377,13 @@ h1.glitch-active {
 body.cursor-hover #cursor {
     width: 16px;
     height: 16px;
-    background: #00D4FF;
+    background: #7C5CED;
 }
 
 body.cursor-hover #cursor-follower {
     width: 54px;
     height: 54px;
-    border-color: rgba(0, 212, 255, 0.5);
+    border-color: rgba(124, 92, 237, 0.5);
 }
 
 /* Hide cursor elements on touch devices */
@@ -400,11 +400,11 @@ body.cursor-hover #cursor-follower {
     top: 0;
     left: 0;
     height: 2px;
-    background: linear-gradient(90deg, #00D4FF, #00FFB2);
+    background: linear-gradient(90deg, #7C5CED, #F4A028);
     z-index: 10000;
     width: 0%;
     transition: width 0.06s linear;
-    box-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 8px rgba(124, 92, 237, 0.5);
 }
 
 /* ---- Scroll Reveal ---- */
@@ -438,7 +438,7 @@ body.cursor-hover #cursor-follower {
 
 /* ---- Active Nav Link ---- */
 nav a.nav-active {
-    color: #00D4FF;
+    color: #7C5CED;
     text-decoration: underline;
     text-underline-offset: 4px;
 }
@@ -448,20 +448,20 @@ nav a.nav-active {
     width: 4px;
 }
 ::-webkit-scrollbar-track {
-    background: #050B14;
+    background: #07080F;
 }
 ::-webkit-scrollbar-thumb {
-    background: #00D4FF;
+    background: #7C5CED;
     border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #00FFB2;
+    background: #F4A028;
 }
 
 /* ---- Text Selection ---- */
 ::selection {
-    background: #00D4FF;
-    color: #050B14;
+    background: #7C5CED;
+    color: #07080F;
 }
 
 /* ================================================================
@@ -477,15 +477,15 @@ nav a.nav-active {
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    background: linear-gradient(135deg, #00D4FF, #00FFB2);
-    color: #050B14;
+    background: linear-gradient(135deg, #7C5CED, #F4A028);
+    color: #07080F;
     transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
 }
 .cta-primary:hover {
     opacity: 0.9;
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(124, 92, 237, 0.3);
 }
 .cta-secondary {
     display: inline-flex;
@@ -497,15 +497,15 @@ nav a.nav-active {
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    border: 1px solid rgba(0, 212, 255, 0.5);
-    color: #00D4FF;
-    background: rgba(0, 212, 255, 0.06);
+    border: 1px solid rgba(124, 92, 237, 0.5);
+    color: #7C5CED;
+    background: rgba(124, 92, 237, 0.06);
     transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
     text-decoration: none;
 }
 .cta-secondary:hover {
-    border-color: rgba(0, 212, 255, 0.9);
-    background: rgba(0, 212, 255, 0.12);
+    border-color: rgba(124, 92, 237, 0.9);
+    background: rgba(124, 92, 237, 0.12);
     transform: translateY(-2px);
 }
 .cta-ghost {
@@ -544,9 +544,9 @@ nav a.nav-active {
     text-decoration: none;
 }
 .inline-chip:hover {
-    color: #00D4FF;
-    border-color: rgba(0, 212, 255, 0.4);
-    background: rgba(0, 212, 255, 0.06);
+    color: #7C5CED;
+    border-color: rgba(124, 92, 237, 0.4);
+    background: rgba(124, 92, 237, 0.06);
 }
 
 /* ================================================================
@@ -560,8 +560,8 @@ nav a.nav-active {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .skill-group:hover {
-    border-color: rgba(0, 212, 255, 0.2);
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.04);
+    border-color: rgba(124, 92, 237, 0.2);
+    box-shadow: 0 0 30px rgba(124, 92, 237, 0.04);
 }
 .skill-group-label {
     font-size: 0.65rem;
@@ -591,13 +591,13 @@ nav a.nav-active {
 }
 .skill-pill:hover { color: #E8F4FD; background: rgba(91, 127, 166, 0.15); }
 .skill-pill.primary {
-    color: #00D4FF;
-    background: rgba(0, 212, 255, 0.07);
-    border-color: rgba(0, 212, 255, 0.25);
+    color: #7C5CED;
+    background: rgba(124, 92, 237, 0.07);
+    border-color: rgba(124, 92, 237, 0.25);
 }
 .skill-pill.primary:hover {
-    background: rgba(0, 212, 255, 0.14);
-    border-color: rgba(0, 212, 255, 0.5);
+    background: rgba(124, 92, 237, 0.14);
+    border-color: rgba(124, 92, 237, 0.5);
 }
 
 /* ================================================================
@@ -611,8 +611,8 @@ nav a.nav-active {
     transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 .project-card:hover {
-    border-color: rgba(0, 212, 255, 0.3);
-    box-shadow: 0 0 50px rgba(0, 212, 255, 0.07), inset 0 0 30px rgba(0, 212, 255, 0.02);
+    border-color: rgba(124, 92, 237, 0.3);
+    box-shadow: 0 0 50px rgba(124, 92, 237, 0.07), inset 0 0 30px rgba(124, 92, 237, 0.02);
     transform: translateY(-4px);
 }
 .project-card-inner {
@@ -625,7 +625,7 @@ nav a.nav-active {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
     font-weight: 700;
-    color: rgba(0, 212, 255, 0.35);
+    color: rgba(124, 92, 237, 0.35);
     letter-spacing: 0.08em;
 }
 .project-title {
@@ -661,9 +661,9 @@ nav a.nav-active {
     border: 1px solid rgba(91, 127, 166, 0.14);
 }
 .tech-tag.featured {
-    color: #00D4FF;
-    background: rgba(0, 212, 255, 0.07);
-    border-color: rgba(0, 212, 255, 0.22);
+    color: #7C5CED;
+    background: rgba(124, 92, 237, 0.07);
+    border-color: rgba(124, 92, 237, 0.22);
 }
 .project-link-btn {
     padding: 5px 14px;
@@ -672,16 +672,16 @@ nav a.nav-active {
     font-weight: 700;
     letter-spacing: 0.06em;
     font-family: 'JetBrains Mono', monospace;
-    background: rgba(0, 212, 255, 0.1);
-    border: 1px solid rgba(0, 212, 255, 0.35);
-    color: #00D4FF;
+    background: rgba(124, 92, 237, 0.1);
+    border: 1px solid rgba(124, 92, 237, 0.35);
+    color: #7C5CED;
     text-decoration: none;
     transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
     white-space: nowrap;
 }
 .project-link-btn:hover {
-    background: rgba(0, 212, 255, 0.18);
-    border-color: rgba(0, 212, 255, 0.6);
+    background: rgba(124, 92, 237, 0.18);
+    border-color: rgba(124, 92, 237, 0.6);
     transform: translateY(-1px);
 }
 .project-link-btn.ghost {
@@ -699,16 +699,16 @@ nav a.nav-active {
    TEACHING SECTION
    ================================================================ */
 .teaching-section {
-    background: linear-gradient(180deg, #050B14 0%, #030a0f 40%, #050B14 100%);
-    border-top: 1px solid rgba(0, 255, 178, 0.1);
-    border-bottom: 1px solid rgba(0, 255, 178, 0.1);
+    background: linear-gradient(180deg, #07080F 0%, #030a0f 40%, #07080F 100%);
+    border-top: 1px solid rgba(244, 160, 40, 0.1);
+    border-bottom: 1px solid rgba(244, 160, 40, 0.1);
     position: relative;
 }
 .teaching-section::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0, 255, 178, 0.04) 0%, transparent 70%);
+    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(244, 160, 40, 0.04) 0%, transparent 70%);
     pointer-events: none;
 }
 .teaching-header { position: relative; }
@@ -722,9 +722,9 @@ nav a.nav-active {
     font-weight: 800;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #00FFB2;
-    background: rgba(0, 255, 178, 0.08);
-    border: 1px solid rgba(0, 255, 178, 0.3);
+    color: #F4A028;
+    background: rgba(244, 160, 40, 0.08);
+    border: 1px solid rgba(244, 160, 40, 0.3);
 }
 
 /* ================================================================
@@ -736,21 +736,21 @@ nav a.nav-active {
     align-items: center;
     text-align: center;
     padding: 1.5rem 1rem;
-    border: 1px solid rgba(0, 255, 178, 0.12);
-    background: rgba(0, 255, 178, 0.03);
+    border: 1px solid rgba(244, 160, 40, 0.12);
+    background: rgba(244, 160, 40, 0.03);
     border-radius: 10px;
     gap: 6px;
     transition: border-color 0.3s ease, background 0.3s ease;
 }
 .edu-stat-card:hover {
-    border-color: rgba(0, 255, 178, 0.3);
-    background: rgba(0, 255, 178, 0.06);
+    border-color: rgba(244, 160, 40, 0.3);
+    background: rgba(244, 160, 40, 0.06);
 }
 .edu-stat-number {
     font-size: 1.75rem;
     font-weight: 800;
     font-family: 'JetBrains Mono', monospace;
-    background: linear-gradient(90deg, #00FFB2, #00D4FF);
+    background: linear-gradient(90deg, #F4A028, #7C5CED);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -778,13 +778,227 @@ nav a.nav-active {
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    background: linear-gradient(135deg, #00FFB2, #00D4FF);
-    color: #050B14;
+    background: linear-gradient(135deg, #F4A028, #7C5CED);
+    color: #07080F;
     text-decoration: none;
     transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 .edu-cta-btn:hover {
     opacity: 0.88;
     transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(0, 255, 178, 0.3);
+    box-shadow: 0 8px 28px rgba(244, 160, 40, 0.28);
 }
+
+/* ================================================================
+   NAV BAR (frosted glass)
+   ================================================================ */
+.nav-bar {
+    background: rgba(7, 8, 15, 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(124, 92, 237, 0.08);
+}
+
+/* ================================================================
+   HERO — BACKGROUND BRAND TEXT
+   ================================================================ */
+.hero-bg-text {
+    position: absolute;
+    font-size: clamp(96px, 17vw, 220px);
+    font-weight: 900;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -0.04em;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(124, 92, 237, 0.055);
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+/* ================================================================
+   HERO — GRADIENT MESH BLOBS
+   ================================================================ */
+.mesh-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+}
+.mesh-blob-1 {
+    width: 560px;
+    height: 560px;
+    background: radial-gradient(circle, rgba(124, 92, 237, 0.13) 0%, transparent 70%);
+    top: -160px;
+    right: -140px;
+}
+.mesh-blob-2 {
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(244, 160, 40, 0.09) 0%, transparent 70%);
+    bottom: -80px;
+    left: 0;
+}
+
+/* ================================================================
+   HERO — STATUS BADGE
+   ================================================================ */
+.hero-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #F4A028;
+    background: rgba(244, 160, 40, 0.07);
+    border: 1px solid rgba(244, 160, 40, 0.22);
+}
+.status-pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #F4A028;
+    box-shadow: 0 0 6px rgba(244, 160, 40, 0.9);
+    animation: status-blink 2.4s ease-in-out infinite;
+    flex-shrink: 0;
+}
+@keyframes status-blink {
+    0%, 100% { opacity: 1; box-shadow: 0 0 6px rgba(244, 160, 40, 0.9); }
+    50%       { opacity: 0.5; box-shadow: 0 0 12px rgba(244, 160, 40, 0.5); }
+}
+.status-div { color: rgba(244, 160, 40, 0.35); }
+
+/* ================================================================
+   HERO — BRAND ROW
+   ================================================================ */
+.hero-brand-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+.hero-brand-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #7C5CED, #B08AF5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.hero-brand-div {
+    width: 1px;
+    height: 0.9rem;
+    background: rgba(124, 92, 237, 0.3);
+}
+.hero-brand-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: #7580A2;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* ================================================================
+   CODE WINDOW  (hero code block)
+   ================================================================ */
+.code-window {
+    background: rgba(14, 15, 30, 0.72);
+    border: 1px solid rgba(124, 92, 237, 0.14);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.code-win-bar {
+    background: rgba(124, 92, 237, 0.06);
+    border-bottom: 1px solid rgba(124, 92, 237, 0.1);
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.cdot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+.cdot-r { background: #FF5F56; opacity: 0.85; }
+.cdot-y { background: #FFBD2E; opacity: 0.85; }
+.cdot-g { background: #27C93F; opacity: 0.85; }
+.code-win-file {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: #7580A2;
+    margin-left: 8px;
+    letter-spacing: 0.04em;
+}
+.code-win-body {
+    padding: 14px 18px;
+    font-size: 0.78rem;
+    line-height: 1.9;
+}
+.kw  { color: #9B7BF7; }
+.str { color: #D4D8F0; }
+.num { color: #F4A028; }
+.cmt { color: #5B6280; font-style: italic; }
+
+/* ================================================================
+   SKILLS TICKER  (scrolling marquee)
+   ================================================================ */
+.skills-ticker {
+    overflow: hidden;
+    background: rgba(14, 15, 30, 0.5);
+    border-top: 1px solid rgba(124, 92, 237, 0.07);
+    border-bottom: 1px solid rgba(124, 92, 237, 0.07);
+    padding: 0.65rem 0;
+}
+.ticker-track {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: ticker-scroll 40s linear infinite;
+}
+.ticker-track:hover { animation-play-state: paused; }
+@keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0 1.25rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #7580A2;
+}
+.ticker-brand { color: rgba(124, 92, 237, 0.75); }
+.ticker-sep {
+    font-size: 0.4rem;
+    color: rgba(124, 92, 237, 0.2);
+}
+
+/* ================================================================
+   PROJECT CARD  — gradient accent on hover
+   ================================================================ */
+.project-card { position: relative; }
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #7C5CED, #F4A028);
+    opacity: 0;
+    border-radius: 10px 10px 0 0;
+    transition: opacity 0.35s ease;
+}
+.project-card:hover::before { opacity: 1; }

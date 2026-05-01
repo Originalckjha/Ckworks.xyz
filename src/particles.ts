@@ -32,10 +32,10 @@ export function initParticles(): void {
   let particles: Particle[] = [];
   let mouseX = -9999, mouseY = -9999;
 
-  const CYAN: RGB  = { r: 0,   g: 212, b: 255 };
-  const MINT: RGB  = { r: 0,   g: 255, b: 178 };
-  let currentColor: RGB = { ...CYAN };
-  let targetColor:  RGB = { ...CYAN };
+  const VIOLET: RGB = { r: 124, g: 92,  b: 237 };
+  const AMBER:  RGB = { r: 244, g: 160, b: 40  };
+  let currentColor: RGB = { ...VIOLET };
+  let targetColor:  RGB = { ...VIOLET };
 
   const resize = (): void => {
     W = canvas.width  = canvas.offsetWidth;
@@ -132,6 +132,6 @@ export function initParticles(): void {
     const y         = window.pageYOffset;
     const teachingY = teachingEl.offsetTop;
     const pastEnd   = y > teachingY + teachingEl.offsetHeight - 200;
-    targetColor = (y >= teachingY - 200 && !pastEnd) ? { ...MINT } : { ...CYAN };
+    targetColor = (y >= teachingY - 200 && !pastEnd) ? { ...AMBER } : { ...VIOLET };
   }, { passive: true });
 }

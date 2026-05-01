@@ -1,182 +1,103 @@
-# Chandra Kishor Jha - Portfolio Website
+# ckworks.xyz
 
-![Portfolio Preview](https://via.placeholder.com/800x400?text=Portfolio+Preview)
+Personal portfolio for **Chandra Kishor Jha** — Software Engineer at Trade Fabric, full-stack developer, and educator based in Delhi, India.
 
-A modern, responsive portfolio website showcasing my work as a Web Developer, Engineer, and Educator.
+**Live:** [ckworks.xyz](https://ckworks.xyz)
 
-## 🌟 Features
+---
 
-- **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
-- **Smooth Animations** - Eye-catching scroll animations and transitions
-- **Typing Effect** - Dynamic hero section with typing animation
-- **Interactive UI** - Hover effects and smooth scrolling
-- **Contact Form** - Built-in form validation
-- **SEO Optimized** - Proper meta tags and semantic HTML
+## Stack
 
-## 🛠️ Technologies Used
+| Layer    | Technology                          |
+|----------|-------------------------------------|
+| Language | TypeScript (strict, ES2020)         |
+| Bundler  | esbuild                             |
+| Styling  | Tailwind CSS (CDN) + custom CSS     |
+| Fonts    | Inter · JetBrains Mono · Newsreader |
+| Deploy   | Vercel (builds on push)             |
 
-- HTML5
-- Tailwind CSS (via CDN)
-- CSS3 (supplemental styles in `style.css`)
-- Vanilla JavaScript
+No framework. Vanilla TypeScript compiles to a single `script.js` via esbuild.
 
-## 📂 Project Structure
+---
+
+## Project Structure
 
 ```
-portfolio/
-├── index.html          # Main HTML file
-├── style.css          # All styling and animations
-├── script.js          # JavaScript functionality
-├── .gitignore         # Git ignore rules
-└── README.md          # Project documentation
+src/
+├── data/              Typed content — edit here to update the site
+│   ├── meta.ts        Personal info, social links, stats
+│   ├── projects.ts    Projects list
+│   ├── experience.ts  Work & teaching timeline (2018 → present)
+│   ├── skills.ts      Skill groups
+│   ├── principles.ts  Philosophy cards
+│   └── teaching.ts    Teaching subjects
+│
+├── templates/         HTML generators — one render function per section
+│   ├── nav.ts
+│   ├── hero.ts
+│   ├── about.ts
+│   ├── experience.ts
+│   ├── skills.ts
+│   ├── projects.ts
+│   ├── principles.ts
+│   ├── teaching.ts
+│   └── footer.ts
+│
+├── app.ts             Assembles all templates → injects into #app
+├── main.ts            Entry: renderApp() → loader → init features
+│
+├── loader.ts          Intro loading screen
+├── cursor.ts          Custom cursor with canvas trail
+├── particles.ts       Interactive particle network
+├── scroll.ts          Scroll progress, reveal animations, nav highlight
+├── text.ts            Text scramble & typewriter effects
+├── interactions.ts    Glitch, magnetic hover, 3D tilt, Konami code
+├── counter.ts         Animated number counters
+├── ripple.ts          Click ripple effect
+└── types.ts           All TypeScript interfaces
 ```
 
-## 🚀 Getting Started
+`index.html` is a minimal shell — metadata, loader, cursor elements, and `<div id="app">`.  
+All page sections are rendered by `src/app.ts` via typed template functions.
 
-### Prerequisites
+---
 
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- Text editor (VS Code, Sublime Text, etc.)
-
-### Installation
-
-1. Clone the repository
+## Development
 
 ```bash
-git clone https://github.com/Originalckjha/your-portfolio.git
+npm install
+npm run watch      # rebuild on save
 ```
 
-1. Navigate to the project directory
+Open `index.html` directly in the browser — no dev server needed.
+
+## Build
 
 ```bash
-cd your-portfolio
+npm run build      # development build
+npm run build:min  # minified (used by Vercel)
 ```
 
-1. Open `index.html` in your browser
+---
 
-```bash
-# On macOS
-open index.html
+## Adding Content
 
-# On Linux
-xdg-open index.html
+| Task              | File                        |
+|-------------------|-----------------------------|
+| New project       | `src/data/projects.ts`      |
+| New timeline item | `src/data/experience.ts`    |
+| New skill         | `src/data/skills.ts`        |
+| Edit personal info| `src/data/meta.ts`          |
 
-# On Windows
-start index.html
-```
+All data files are fully typed — TypeScript will catch shape errors at build time.
 
-Or simply drag the `index.html` file into your browser.
+---
 
-## 📝 Customization
+## Contact
 
-### Changing Colors
+**Chandra Kishor Jha**  
+[ckworkss@gmail.com](mailto:ckworkss@gmail.com) · [LinkedIn](https://www.linkedin.com/in/chandra-kishor-jha-276744184) · [GitHub](https://github.com/Originalckjha) · [X](https://x.com/originalckjha)
 
-Edit the CSS variables in `style.css`:
+---
 
-```css
-:root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --text-dark: #1f2937;
-    --text-light: #6b7280;
-    --bg-light: #f9fafb;
-    --white: #ffffff;
-    --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-```
-
-### Adding Projects
-
-Add a new project card in the Projects section of `index.html`:
-
-```html
-<div class="project-card">
-    <div class="project-image">🎨</div>
-    <div class="project-content">
-        <h3 class="project-title">Your Project Name</h3>
-        <p class="project-description">Project description here</p>
-        <div class="project-links">
-            <a href="your-link" class="project-link">Live Demo</a>
-            <a href="github-link" class="project-link">GitHub</a>
-        </div>
-    </div>
-</div>
-```
-
-### Modifying Skills
-
-Edit the skills in the Skills section of `index.html`:
-
-```html
-<div class="skill-card">
-    <div class="skill-icon">🚀</div>
-    <div class="skill-name">Your Skill</div>
-</div>
-```
-
-## 🌐 Deployment
-
-### GitHub Pages
-
-1. Push your code to GitHub
-1. Go to repository Settings
-1. Navigate to Pages section
-1. Select main branch as source
-1. Your site will be live at `https://yourusername.github.io/repository-name`
-
-### Netlify
-
-1. Sign up on [Netlify](https://www.netlify.com/)
-1. Connect your GitHub repository
-1. Deploy with one click
-1. Your site will be live instantly
-
-### Vercel
-
-1. Sign up on [Vercel](https://vercel.com/)
-1. Import your GitHub repository
-1. Deploy automatically
-1. Get a live URL instantly
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Opera (latest)
-
-## 📧 Contact
-
-**Chandra Kishor Jha**
-
-- Email: ckworkss@gmail.com
-- LinkedIn: [linkedin.com/in/chandra-kishor-jha-276744184](https://www.linkedin.com/in/chandra-kishor-jha-276744184)
-- GitHub: [github.com/Originalckjha](https://github.com/Originalckjha)
-- Twitter: [@originalckjha](https://x.com/originalckjha)
-- Linktree: [linktr.ee/Ckjhaa](https://linktr.ee/Ckjhaa)
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🙏 Acknowledgments
-
-- Inspired by modern portfolio designs
-- Icons from emoji system fonts
-- Gradient inspiration from various design resources
-
-## 🔄 Updates
-
-### Version 1.0.0 (2025)
-
-- Initial release
-- Responsive design
-- Interactive animations
-- Contact form with validation
-
------
-
-⭐ If you like this project, please give it a star on GitHub!
-
-Made with ❤️ by Chandra Kishor Jha
+MIT License — see [LICENSE](LICENSE)
