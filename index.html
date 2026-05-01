@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CK Jha · Software Engineer & Educator — Delhi</title>
-    <meta name="description" content="CK Jha (Chandra Kishor Jha) — Software Engineer at a startup, full-stack developer & educator based in Delhi. 8+ years building systems, shipping products, teaching minds. TypeScript, React, Node.js, System Design.">
-    <meta name="keywords" content="software engineer Delhi, full stack developer Delhi, TypeScript developer India, web developer Rohini, computer science tutor Delhi">
-    <meta name="author" content="Chandra Kishor Jha">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#08090B">
+    <!-- ═══ SEO ═══ -->
+    <title>CKWorks — CK JHA | Software Engineer & Educator · Delhi</title>
+    <meta name="description" content="CKWorks — CK JHA (Chandra Kishor Jha). Software Engineer at a startup, full-stack developer, and educator based in Delhi. 8+ years building systems, shipping products, teaching minds. TypeScript, React, Node.js, System Design.">
+    <meta name="keywords" content="software engineer Delhi, full stack developer Delhi, TypeScript developer India, web developer Rohini, computer science tutor Delhi, lifelong learner">
+    <meta name="author"  content="Chandra Kishor Jha">
+    <meta name="robots"  content="index, follow">
     <link rel="canonical" href="https://ckworks.xyz/">
     <meta name="geo.region"    content="IN-DL">
     <meta name="geo.placename" content="Delhi, India">
 
+    <!-- ═══ OG / TWITTER ═══ -->
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://ckworks.xyz/">
-    <meta property="og:title"       content="CK Jha — Software Engineer & Educator · Delhi">
+    <meta property="og:title"       content="Chandra Kishor Jha | Software Engineer & Educator">
     <meta property="og:description" content="8+ years building & teaching. TypeScript, React, Node.js. Software Engineer at a startup. Based in Delhi.">
     <meta property="og:image"       content="https://ckworks.xyz/avatar.jpg">
     <meta property="og:locale"      content="en_IN">
@@ -24,6 +25,7 @@
     <meta name="twitter:site"       content="@originalckjha">
     <meta name="twitter:image"      content="https://ckworks.xyz/avatar.jpg">
 
+    <!-- ═══ JSON-LD ═══ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -52,7 +54,16 @@
           "url": "https://ckworks.xyz/#teaching",
           "email": "ckworkss@gmail.com",
           "address": { "@type": "PostalAddress", "addressLocality": "Rohini", "addressRegion": "Delhi", "postalCode": "110085", "addressCountry": "IN" },
-          "areaServed": ["Rohini","Pitampura","Prashant Vihar","Shalimar Bagh","Ashok Vihar","Kohat Enclave"]
+          "areaServed": ["Rohini","Pitampura","Prashant Vihar","Shalimar Bagh","Ashok Vihar","Kohat Enclave"],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "itemListElement": [
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Computer Science (CBSE/ICSE)"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Mathematics — Class 6–12"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Python & Coding"}},
+              {"@type":"Offer","itemOffered":{"@type":"Course","name":"Web Development"}}
+            ]
+          }
         }
       ]
     }
@@ -60,12 +71,11 @@
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Intro Loader -->
     <div id="loader">
         <div id="loader-inner">
             <div id="loader-text">CK<span>Works</span></div>
@@ -75,6 +85,7 @@
 
     <div id="scroll-progress"></div>
 
+    <!-- Page content rendered by TypeScript (src/app.ts) -->
     <div id="app"></div>
 
     <script src="script.js"></script>
