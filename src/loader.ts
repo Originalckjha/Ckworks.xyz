@@ -13,31 +13,20 @@ export function initLoader(): Promise<void> {
       return;
     }
 
-    const brand = 'CKJ.';
-    let i = 0;
-    loaderText.textContent = '';
+    loaderBar.style.width = '0%';
 
-    const typeInterval = setInterval(() => {
-      loaderText.textContent += brand[i++];
-      if (i >= brand.length) {
-        clearInterval(typeInterval);
+    // Fill bar over 700ms then fade out
+    setTimeout(() => {
+      loaderBar.style.width = '100%';
 
-        // Brief pause → fill bar
+      setTimeout(() => {
+        loader.classList.add('hidden');
+
         setTimeout(() => {
-          loaderBar.style.width = '100%';
-
-          // Bar fills in 600ms → exit animation
-          setTimeout(() => {
-            loader.classList.add('loader-exit');
-
-            // Slide-up completes → hide + resolve
-            setTimeout(() => {
-              loader.style.display = 'none';
-              resolve();
-            }, 700);
-          }, 600);
-        }, 200);
-      }
-    }, 130);
+          loader.style.display = 'none';
+          resolve();
+        }, 650);
+      }, 500);
+    }, 300);
   });
 }

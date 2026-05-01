@@ -1,47 +1,43 @@
 import { projects } from '../data/projects';
 import { meta }     from '../data/meta';
 
-const CARD_DELAYS = [0, 120, 80, 200];
-
 export function renderProjects(): string {
-  const cards = projects.map((p, i) => {
-    const delay = CARD_DELAYS[i] ?? 0;
-    const tags  = p.tags.map(t =>
-      `<span class="tech-tag${t.featured ? ' featured' : ''}">${t.label}</span>`
-    ).join('');
+  const rows = projects.map((p, i) => {
+    const num  = String(i + 1).padStart(2, '0');
+    const tags = p.tags.slice(0, 3).map(t => t.label).join(' · ');
 
     return `
-    <article class="project-card" data-reveal${delay ? ` data-delay="${delay}"` : ''}>
-      <div class="project-card-inner">
-        <div class="flex items-start justify-between mb-4">
-          <span class="project-number">${p.number}</span>
-          <div class="flex gap-2">
-            <a href="${p.liveUrl}"   target="_blank" rel="noopener" class="project-link-btn">Live ↗</a>
-            <a href="${p.githubUrl}" target="_blank" rel="noopener" class="project-link-btn ghost">GitHub</a>
-          </div>
-        </div>
-        <h3 class="project-title">${p.title}</h3>
-        <p class="project-desc">${p.description}</p>
-        <div class="tech-tags">${tags}</div>
+    <div class="work-row" data-reveal${i ? ` data-delay="${i * 60}"` : ''}>
+      <span class="work-num">${num}</span>
+      <div class="work-body">
+        <h3 class="work-title">${p.title}</h3>
+        <p class="work-desc">${p.description}</p>
+        <span class="work-tags">${tags}</span>
       </div>
-    </article>`;
+      <div class="work-actions">
+        <a href="${p.liveUrl}"   target="_blank" rel="noopener" class="work-btn">Live ↗</a>
+        <a href="${p.githubUrl}" target="_blank" rel="noopener" class="work-btn ghost">Code</a>
+      </div>
+    </div>`;
   }).join('');
 
   return `
-<section id="projects" class="py-28 px-8 md:px-24">
-  <div class="max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-16" data-reveal>
-      <div>
-        <p class="font-mono text-xs uppercase tracking-[0.4em] text-agni mb-3">// Live Projects</p>
-        <h2 class="text-4xl font-bold kerning-tight">Shipped. In production.</h2>
+<section id="projects" class="projects-section">
+  <div class="container">
+
+    <div class="section-header" data-reveal>
+      <span class="section-label">Projects</span>
+      <div class="section-header-row">
+        <h2 class="section-title">Shipped. In production.</h2>
+        <a href="${meta.github}" target="_blank" rel="noopener" class="all-repos-link">
+          All repositories ↗
+        </a>
       </div>
-      <a href="${meta.github}" target="_blank" rel="noopener"
-         class="font-mono text-xs text-vayu hover:text-prithvi border-b border-vayu/40 pb-0.5 transition-colors self-start md:self-auto">
-        View all repositories ↗
-      </a>
     </div>
-    <div class="grid md:grid-cols-2 gap-6">${cards}
+
+    <div class="work-list">${rows}
     </div>
+
   </div>
 </section>`;
 }
