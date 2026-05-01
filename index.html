@@ -71,127 +71,19 @@
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        akasha:  '#07080F',
-                        vayu:    '#7580A2',
-                        agni:    '#7C5CED',
-                        jala:    '#0E0F1E',
-                        prithvi: '#E8E9F5',
-                        edu:     '#F4A028'
-                    },
-                    fontFamily: {
-                        sans:  ['Inter', 'sans-serif'],
-                        mono:  ['"JetBrains Mono"', 'monospace'],
-                        serif: ['Newsreader', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body { background-color: #07080F; color: #E8E9F5; }
-        .kerning-tight { letter-spacing: -0.04em; }
-        .mandala-grid {
-            background-image: radial-gradient(#0E0F1E 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        .fade-in { animation: fadeIn 1.4s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* ═══ EXPERIENCE TIMELINE ═══ */
-        .timeline-container { position: relative; }
-        .timeline-container::before {
-            content: '';
-            position: absolute;
-            left: 7.5rem; top: 0.3rem; bottom: 3rem; width: 1px;
-            background: linear-gradient(to bottom, rgba(124,92,237,0.9) 0%, rgba(244,160,40,0.7) 60%, rgba(91,127,166,0.2) 100%);
-        }
-        .tl-item {
-            display: grid;
-            grid-template-columns: 7.5rem 1.5rem 1fr;
-            gap: 0 1.5rem;
-            align-items: start;
-            padding-bottom: 2.75rem;
-            position: relative;
-        }
-        .tl-year {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.68rem; color: #5B7FA6;
-            text-align: right; padding-top: 0.25rem;
-            line-height: 1.5; letter-spacing: 0.02em;
-        }
-        .tl-year-current { color: #F4A028; font-weight: 700; }
-        .tl-year-current span { display: block; font-size: 0.58rem; letter-spacing: 0.12em; opacity: 0.75; margin-top: 1px; }
-        .tl-dot {
-            width: 10px; height: 10px; border-radius: 50%;
-            background: #7C5CED; box-shadow: 0 0 8px rgba(124,92,237,0.45);
-            margin-top: 0.3rem; flex-shrink: 0; justify-self: center;
-        }
-        .tl-dot-edu     { background: #F4A028; box-shadow: 0 0 8px rgba(244,160,40,0.5); }
-        .tl-dot-current {
-            background: #F4A028; width: 14px; height: 14px;
-            margin-top: 0.15rem; box-shadow: 0 0 16px rgba(244,160,40,0.9);
-            animation: tl-pulse 2.2s ease-in-out infinite;
-        }
-        @keyframes tl-pulse {
-            0%, 100% { box-shadow: 0 0 10px rgba(244,160,40,0.7); }
-            50%       { box-shadow: 0 0 28px rgba(244,160,40,1), 0 0 50px rgba(244,160,40,0.3); }
-        }
-        .tl-card {
-            background: rgba(10,22,40,0.55); border: 1px solid rgba(91,127,166,0.12);
-            border-radius: 12px; padding: 1.2rem 1.4rem;
-            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .tl-card:hover           { border-color: rgba(124,92,237,0.28); transform: translateX(5px); }
-        .tl-card-highlight       { border-color: rgba(244,160,40,0.15); }
-        .tl-card-highlight:hover { border-color: rgba(244,160,40,0.4); }
-        .tl-card-current {
-            border-color: rgba(244,160,40,0.32); background: rgba(244,160,40,0.03);
-            box-shadow: 0 0 40px rgba(244,160,40,0.06);
-        }
-        .tl-card-current:hover { border-color: rgba(244,160,40,0.55); transform: translateX(5px); box-shadow: 0 0 50px rgba(244,160,40,0.1); }
-        .tl-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.55rem; flex-wrap: wrap; }
-        .tl-role  { font-size: 1.05rem; font-weight: 700; color: #E8F4FD; line-height: 1.3; }
-        .tl-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: #5B7FA6; border: 1px solid rgba(91,127,166,0.22); border-radius: 4px; padding: 0.18rem 0.5rem; white-space: nowrap; flex-shrink: 0; }
-        .tl-badge-edu     { color: #F4A028; border-color: rgba(244,160,40,0.3); }
-        .tl-badge-current { color: #F4A028; border-color: rgba(244,160,40,0.4); background: rgba(244,160,40,0.07); font-weight: 700; }
-        .tl-desc  { font-size: 0.875rem; color: #5B7FA6; line-height: 1.65; margin-bottom: 0.75rem; }
-        .tl-tags  { display: flex; flex-wrap: wrap; gap: 0.3rem; }
-        .tl-tags span {
-            font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; color: #7C5CED;
-            background: rgba(124,92,237,0.07); border: 1px solid rgba(124,92,237,0.15);
-            border-radius: 3px; padding: 0.12rem 0.38rem;
-            text-transform: uppercase; letter-spacing: 0.06em;
-        }
-        .tl-item-current .tl-tags span { color: #F4A028; background: rgba(244,160,40,0.07); border-color: rgba(244,160,40,0.22); }
-        @media (max-width: 640px) {
-            .timeline-container::before { left: 0; }
-            .tl-item { grid-template-columns: 0 1.25rem 1fr; gap: 0 0.875rem; }
-            .tl-year { display: none; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
 </head>
-<body class="mandala-grid font-sans antialiased">
+<body>
 
-    <!-- Intro Loader (present before JS executes) -->
+    <!-- Intro Loader -->
     <div id="loader">
         <div id="loader-inner">
-            <div id="loader-text"></div>
+            <div id="loader-text">CK<span>Works</span></div>
             <div id="loader-bar-track"><div id="loader-bar"></div></div>
         </div>
     </div>
 
     <div id="scroll-progress"></div>
-    <div id="cursor"></div>
-    <div id="cursor-follower"></div>
 
     <!-- Page content rendered by TypeScript (src/app.ts) -->
     <div id="app"></div>

@@ -12,10 +12,9 @@ export function initScrollProgress(): void {
   window.addEventListener(
     'scroll',
     () => {
-      const total = document.body.scrollHeight - window.innerHeight;
-      bar.style.width = total > 0
-        ? `${(window.pageYOffset / total) * 100}%`
-        : '0%';
+      const total    = document.body.scrollHeight - window.innerHeight;
+      const progress = total > 0 ? window.pageYOffset / total : 0;
+      bar.style.transform = `scaleX(${progress})`;
     },
     { passive: true }
   );
@@ -54,7 +53,7 @@ export function initNavHighlight(): void {
       });
       links.forEach(link => {
         link.classList.toggle(
-          'nav-active',
+          'active',
           link.getAttribute('href') === `#${current}`
         );
       });
