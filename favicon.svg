@@ -1,17 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="#00D4FF"/>
-      <stop offset="100%" stop-color="#00FFB2"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#9B7BF7"/>
+      <stop offset="100%" stop-color="#6B3FE8"/>
     </linearGradient>
   </defs>
-  <rect width="32" height="32" rx="5" fill="#050B14"/>
-  <text
-    x="16" y="22"
-    font-family="Inter, system-ui, sans-serif"
-    font-size="13"
-    font-weight="700"
-    letter-spacing="-0.5"
-    text-anchor="middle"
-    fill="url(#g)">CKJ</text>
+  <rect width="48" height="48" rx="12" fill="url(#bg)"/>
+  <text x="24" y="29" fill="white"
+        font-family="'JetBrains Mono',ui-monospace,monospace"
+        font-weight="800" font-size="16"
+        text-anchor="middle" letter-spacing="-1">CK</text>
+  <rect x="13" y="34" width="22" height="2" rx="1" fill="rgba(255,255,255,0.35)"/>
 </svg>

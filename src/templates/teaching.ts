@@ -46,7 +46,7 @@ export function renderTeaching(): string {
         <span class="edu-stat-label">Covered</span>
       </div>
       <div class="edu-stat-card">
-        <span class="edu-stat-number" style="-webkit-text-fill-color:#47BFA6;color:#47BFA6;">Rohini</span>
+        <span class="edu-stat-number" style="-webkit-text-fill-color:#F4A028;color:#F4A028;">Rohini</span>
         <span class="edu-stat-label">Delhi + Nearby</span>
       </div>
     </div>

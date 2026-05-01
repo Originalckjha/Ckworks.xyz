@@ -27,7 +27,7 @@ export function renderFooter(): string {
   </div>
 
   <div class="mt-16 text-[10px] text-vayu/25 font-mono uppercase tracking-[0.3em]" data-reveal data-delay="400">
-    &copy; 2026 ${meta.name} &nbsp;·&nbsp; ${meta.location} &nbsp;·&nbsp; Built with TypeScript.
+    &copy; 2026 <span class="text-agni/40">CKWorks</span> &nbsp;·&nbsp; ${meta.name} &nbsp;·&nbsp; ${meta.location}
   </div>
 </footer>`;
 }

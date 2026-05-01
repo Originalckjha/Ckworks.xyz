@@ -5,11 +5,11 @@ export function renderPrinciples(): string {
     const delay = i * 100;
 
     const spanAttrs = p.style === 'jigyasa'
-      ? `class="font-serif italic text-xl" style="background:linear-gradient(90deg,#47BFA6,#5BA8D4,#47BFA6);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite"`
+      ? `class="font-serif italic text-xl" style="background:linear-gradient(90deg,#F4A028,#7C5CED,#F4A028);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite"`
       : `class="shimmer-text font-serif italic text-xl"`;
 
     const borderStyle = p.style === 'jigyasa'
-      ? ' style="border-color:rgba(71,191,166,0.12)"'
+      ? ' style="border-color:rgba(244,160,40,0.14)"'
       : '';
 
     return `

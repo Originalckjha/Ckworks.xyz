@@ -1,5 +1,6 @@
 import { renderNav }        from './templates/nav';
 import { renderHero }       from './templates/hero';
+import { renderTicker }     from './templates/ticker';
 import { renderAbout }      from './templates/about';
 import { renderExperience } from './templates/experience';
 import { renderSkills }     from './templates/skills';
@@ -15,6 +16,7 @@ export function renderApp(): void {
   app.innerHTML = [
     renderNav(),
     renderHero(),
+    renderTicker(),
     renderAbout(),
     renderExperience(),
     renderSkills(),
